@@ -19,6 +19,8 @@ isDivisible(4, 3);
 isDivisible(4, 2);
 function test(_x) {
     console.log(_x);
+    return _x * 2;
 }
-test(172);
+var y;
+y = test(172);
 //# sourceMappingURL=test.js.map

@@ -25,9 +25,11 @@ isDivisible(4, 2);
 
 
 
-function test(_x: number): void {
+function test(_x: number) {
     console.log(_x);
+    return _x * 2;
 }
 
 
-test(172);
+let y: number;
+y = test (172);
