@@ -1,9 +1,9 @@
 var L01;
 (function (L01) {
     //bearbeitet mit Lena, Kriss und Amélie
-    var subject = ["Harry", "Hermine", "Ron", "Hagrid", "Snape", "Dumbledore"];
-    var verb = ["braut", "liebt", "studiert", "hasst", "zaubert", "zerstört"];
-    var object = ["Zaubertränke", "den Grimm", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"];
+    var subject = ["Lena", "Kriss", "Amélie", "Hannah", "Theo", "Liz"];
+    var verb = ["liebt", "küsst", "studiert", "ignoriert", "schlägt", "tanzt mit"];
+    var object = ["Lena", "Kriss", "Amélie", "Hannah", "Theo", "Liz"];
     //console.log(subject, verb, object);
     for (var index = subject.length; index > 0; index--) {
         getVerse(subject, verb, object);
@@ -18,7 +18,7 @@ var L01;
         console.log(vers);
         //console.log(_subject);
         //console.log(randomNumberSubject);
-        return ("Alohomora");
+        return ("Späßle");
     } //console.log(getVerse);
 })(L01 || (L01 = {}));
 //# sourceMappingURL=RandomPoem.js.map

@@ -1,9 +1,9 @@
 namespace L01 {
     //bearbeitet mit Lena, Kriss und Amélie
 
-    let subject: string [] = ["Harry", "Hermine", "Ron", "Hagrid", "Snape", "Dumbledore"];
-    let verb: string [] = ["braut", "liebt", "studiert", "hasst", "zaubert", "zerstört"];
-    let object: string [] = ["Zaubertränke", "den Grimm", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"];
+    let subject: string [] = ["Lena", "Kriss", "Amélie", "Hannah", "Theo", "Liz"];
+    let verb: string [] = ["liebt", "küsst", "studiert", "ignoriert", "schlägt", "tanzt mit"];
+    let object: string [] = ["Lena", "Kriss", "Amélie", "Hannah", "Theo", "Liz"];
 
     //console.log(subject, verb, object);
     
@@ -22,7 +22,7 @@ namespace L01 {
         console.log(vers);
         //console.log(_subject);
         //console.log(randomNumberSubject);
-        return("Alohomora");   
+        return("Späßle");   
     } //console.log(getVerse);
 
 }
