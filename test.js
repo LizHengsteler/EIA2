@@ -12,7 +12,7 @@ console.log(a[4]);*/
 var s = { "zahl": 7, "wahr": true, text: "Hallo" };
 console.log(s);
 console.log(s["key"]);
-console.log(s.key);
+//console.log(s.key);
 function isDivisible(dividend, divisor) { return (dividend % divisor == 0); }
 ;
 isDivisible(4, 3);

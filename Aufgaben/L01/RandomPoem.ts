@@ -13,15 +13,16 @@ namespace L01 {
         //console.log(index);
     }
 
-    function getVerse (_subject: string[], _verb: string[], _object: string[] ): string {
+    function getVerse (_subject: string[], _verb: string[], _object: string[] ): string { //_Platzhalter für Übergabe
         let vers: string = "";
         let randomNumberSubject: number = Math.floor(Math.random() * _subject.length);
         let randomNumberVerb: number = Math.floor(Math.random() * _subject.length);
         let randomNumberObject: number = Math.floor(Math.random() * _subject.length);
-        vers = vers + _subject.splice(randomNumberSubject, 1)[0] + " " +  _verb.splice(randomNumberVerb, 1) + " " + _object.splice(randomNumberObject, 1);
+        vers = vers + _subject.splice(randomNumberSubject, 1) + " " +  _verb.splice(randomNumberVerb, 1) + " " + _object.splice(randomNumberObject, 1);
         console.log(vers);
         //console.log(_subject);
         //console.log(randomNumberSubject);
         return("Alohomora");   
     } //console.log(getVerse);
+
 }
