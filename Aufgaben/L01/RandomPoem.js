@@ -12,8 +12,8 @@ var L01;
     function getVerse(_subject, _verb, _object) {
         var vers = "";
         var randomNumberSubject = Math.floor(Math.random() * _subject.length);
-        var randomNumberVerb = Math.floor(Math.random() * _subject.length);
-        var randomNumberObject = Math.floor(Math.random() * _subject.length);
+        var randomNumberVerb = Math.floor(Math.random() * _verb.length);
+        var randomNumberObject = Math.floor(Math.random() * _object.length);
         vers = vers + _subject.splice(randomNumberSubject, 1) + " " + _verb.splice(randomNumberVerb, 1) + " " + _object.splice(randomNumberObject, 1);
         console.log(vers);
         //console.log(_subject);
