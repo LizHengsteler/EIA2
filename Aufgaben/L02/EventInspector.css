@@ -1,0 +1,25 @@
+
+.div0 {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    border-style: solid;
+    border-color: black;
+    
+
+}
+
+.div1 {
+    position: absolute;
+    margin-left: 500px;
+    height: 400px;
+    width: 400px;
+    border-style: solid;
+    border-color: black;
+   
+
+}
+
+.span {
+    position: fixed;
+}
