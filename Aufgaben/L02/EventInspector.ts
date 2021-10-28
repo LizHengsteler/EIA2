@@ -1,28 +1,22 @@
 namespace L02_Load {
     window.addEventListener("load", handleLoad);
 
-    let div0: HTMLElement = document.createElement("div");
-    div0.classList.add("div0");
-    document.body.appendChild(div0);
-
-
-    let div1: HTMLElement = document.createElement("div");
-    div1.classList.add("div1");
-    document.body.appendChild(div1);
-
-    let span: HTMLElement = document.createElement("span");
-    span.classList.add("span");
-    document.body.appendChild(span);
-
   
-
     function handleLoad(_event: Event): void {
 
         console.log(_event);
+        let div0: HTMLElement = document.createElement("div");
+        div0.classList.add("div0");
+        document.body.appendChild(div0);
+
+
+        let div1: HTMLElement = document.createElement("div");
+        div1.classList.add("div1");
+        document.body.appendChild(div1);
 
         //MouseMove Listener
         document.addEventListener("mousemove", setInfoBox);
-        
+
         //click-Listener
         document.querySelector(".div0").addEventListener("click", logInfo);
         document.querySelector(".div1").addEventListener("click", logInfo);
@@ -43,12 +37,24 @@ namespace L02_Load {
   }
 
     function setInfoBox (_event: MouseEvent): void {
-      span.addEventListener("mousemove", setInfoBox);
+
+      let span: HTMLElement = document.createElement("span");
+      span.classList.add("span");
+      document.body.appendChild(span);
+      
+      var x: Event = _event.clientX;    //clientX vorbelegte Funktion  
+      var y: Event = _event.clientY; 
+      document.appendChild(span);
+      span.appendChild(x);
+      
+      
+      console.log(_event); //MouseEvent 
 
     
   }
 
-  function logInfo (_event: Event) {
+    function logInfo (_event: Event): void {
+    console.log(_event);
     
   }
 
