@@ -1,8 +1,9 @@
 var L02_Load;
 (function (L02_Load) {
     window.addEventListener("load", handleLoad);
-    var span = document.createElement("span");
-    span.classList.add("span");
+    /*let span: HTMLElement = document.createElement("span");
+    span.classList.add("span");*/
+    var span = document.querySelector(".span");
     function handleLoad(_event) {
         var div0 = document.createElement("div");
         div0.classList.add("div0");
@@ -14,37 +15,24 @@ var L02_Load;
         //MouseMove Listener
         document.addEventListener("mousemove", setInfoBox);
         //click-Listener
-        document.querySelector(".div0").addEventListener("click", logInfo);
-        document.querySelector(".div1").addEventListener("click", logInfo);
+        div0.addEventListener("click", logInfo);
+        div1.addEventListener("click", logInfo);
         document.addEventListener("click", logInfo);
         document.body.addEventListener("click", logInfo);
         //document.querySelector(".div0").addEventListener("click", logInfo);
         //keyup-Listener
-        document.querySelector(".div0").addEventListener("keyup", logInfo);
-        document.querySelector(".div1").addEventListener("keyup", logInfo);
+        div0.addEventListener("keyup", logInfo);
+        div1.addEventListener("keyup", logInfo);
         document.addEventListener("keyup", logInfo);
         document.body.addEventListener("keyup", logInfo);
     }
     function setInfoBox(_event) {
-        var span = document.createElement("span");
-        span.classList.add("span");
-        document.body.appendChild(span);
-        var x = _event.clientX; //clientX vorbelegte Funktion  
+        var x = _event.clientX;
         var y = _event.clientY;
-        //span.innerHTML = "position X = " + x + "px" + ", position Y = " + y + "px";
-        var target = _event.target;
-        //span.style.left = x + "px";
-        //span.style.top = y + "px";
-        span.innerHTML = "X: " + x + "px" + "<br>" + "Y: " + y + "px" + "<br>" + target;
-        console.log(_event); //MouseEvent 
-    }
-    function setInfoBox(_event) {
-        var x = _event.offsetX;
-        var y = _event.offsetY;
         var target = _event.target;
         span.style.left = x + "px";
         span.style.top = y + "px";
-        span.innerHTML = "X: " + x + "px" + "<br>" + "Y: " + y + "px" + "<br>" + target;
+        span.innerHTML = "x position:" + x + "y position" + y;
     }
     function logInfo(_event) {
         console.log(_event.type);
