@@ -2,6 +2,7 @@ var L02_Load;
 (function (L02_Load) {
     window.addEventListener("load", handleLoad);
     var span; //globaler Zugriff
+    var button;
     function handleLoad(_event) {
         var div0 = document.createElement("div");
         div0.classList.add("div0");
@@ -24,6 +25,9 @@ var L02_Load;
         div1.addEventListener("keyup", logInfo);
         document.addEventListener("keyup", logInfo);
         document.body.addEventListener("keyup", logInfo);
+        /*let button: HTMLElement = document.createElement("button");
+        button.classList.add("button");
+        div1.appendChild(button);*/
     }
     function setInfoBox(_event) {
         var x = _event.clientX;

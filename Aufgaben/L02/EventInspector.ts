@@ -2,6 +2,7 @@ namespace L02_Load {
     window.addEventListener("load", handleLoad);
  
     let span: HTMLElement; //globaler Zugriff
+    let button: HTMLElement;
     
 
     
@@ -14,6 +15,7 @@ namespace L02_Load {
       div1.classList.add("div1");
       document.body.appendChild(div1);
       span = document.querySelector(".span");
+      
      
       //console.log(_event);
      
@@ -32,6 +34,9 @@ namespace L02_Load {
       div1.addEventListener("keyup", logInfo);
       document.addEventListener("keyup", logInfo);
       document.body.addEventListener("keyup", logInfo);
+      /*let button: HTMLElement = document.createElement("button");
+      button.classList.add("button");
+      div1.appendChild(button);*/
      
   }
     function setInfoBox(_event: MouseEvent): void {
