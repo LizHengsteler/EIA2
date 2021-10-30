@@ -24,9 +24,9 @@
 
 .span {
     position: fixed;
-    height: 100px;
+    background-color: rgba(0, 0, 0, 0);
+    height: 60px;
     width: 200px;
-    background-color: rgba(250, 235, 215, 0.295);
     border-width: 2px;
     border: thin dotted black;
     

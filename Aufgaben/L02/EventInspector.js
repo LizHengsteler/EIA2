@@ -1,9 +1,7 @@
 var L02_Load;
 (function (L02_Load) {
     window.addEventListener("load", handleLoad);
-    /*let span: HTMLElement = document.createElement("span");
-    span.classList.add("span");*/
-    var span = document.querySelector(".span");
+    var span; //globaler Zugriff
     function handleLoad(_event) {
         var div0 = document.createElement("div");
         div0.classList.add("div0");
@@ -11,6 +9,7 @@ var L02_Load;
         var div1 = document.createElement("div");
         div1.classList.add("div1");
         document.body.appendChild(div1);
+        span = document.querySelector(".span");
         //console.log(_event);
         //MouseMove Listener
         document.addEventListener("mousemove", setInfoBox);
@@ -29,10 +28,10 @@ var L02_Load;
     function setInfoBox(_event) {
         var x = _event.clientX;
         var y = _event.clientY;
-        //let target: EventTarget = _event.target;
+        var target = _event.target;
         span.style.left = x + "px";
         span.style.top = y + "px";
-        span.innerHTML = "x position:" + x + "y position" + y;
+        span.innerHTML = "Position von X: " + x + "px" + "<br>" + "Position von Y: " + y + "px" + "<br>" + target;
     }
     function logInfo(_event) {
         console.log(_event.type);

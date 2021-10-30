@@ -1,9 +1,10 @@
 namespace L02_Load {
     window.addEventListener("load", handleLoad);
-    /*let span: HTMLElement = document.createElement("span");
-    span.classList.add("span");*/
+ 
+    let span: HTMLElement; //globaler Zugriff
+    
 
-    let span: HTMLElement = document.querySelector(".span");
+    
     
     function handleLoad(_event: Event): void {
       let div0: HTMLElement = document.createElement("div");
@@ -12,10 +13,11 @@ namespace L02_Load {
       let div1: HTMLElement = document.createElement("div");
       div1.classList.add("div1");
       document.body.appendChild(div1);
+      span = document.querySelector(".span");
      
       //console.log(_event);
      
-        //MouseMove Listener
+      //MouseMove Listener
       document.addEventListener("mousemove", setInfoBox);
 
         //click-Listener
@@ -36,12 +38,11 @@ namespace L02_Load {
 
       let x: number = _event.clientX;
       let y: number = _event.clientY; 
-     
-      //let target: EventTarget = _event.target;
-      
+
+      let target: EventTarget = _event.target; 
       span.style.left = x + "px";
       span.style.top = y + "px";
-      span.innerHTML = "x position:" + x + "y position" + y;
+      span.innerHTML = "Position von X: " + x + "px" + "<br>" + "Position von Y: " + y + "px" + "<br>" +  target;
       
     
 }
