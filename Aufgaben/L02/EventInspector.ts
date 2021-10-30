@@ -23,7 +23,7 @@ namespace L02_Load {
       div1.addEventListener("click", logInfo);
       document.addEventListener("click", logInfo);
       document.body.addEventListener("click", logInfo);
-        //document.querySelector(".div0").addEventListener("click", logInfo);
+      document.querySelector(".div0").addEventListener("click", logInfo);
 
         //keyup-Listener
       div0.addEventListener("keyup", logInfo);
@@ -37,7 +37,7 @@ namespace L02_Load {
       let x: number = _event.clientX;
       let y: number = _event.clientY; 
      
-      let target: EventTarget = _event.target;
+      //let target: EventTarget = _event.target;
       
       span.style.left = x + "px";
       span.style.top = y + "px";

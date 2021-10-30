@@ -19,7 +19,7 @@ var L02_Load;
         div1.addEventListener("click", logInfo);
         document.addEventListener("click", logInfo);
         document.body.addEventListener("click", logInfo);
-        //document.querySelector(".div0").addEventListener("click", logInfo);
+        document.querySelector(".div0").addEventListener("click", logInfo);
         //keyup-Listener
         div0.addEventListener("keyup", logInfo);
         div1.addEventListener("keyup", logInfo);
@@ -29,7 +29,7 @@ var L02_Load;
     function setInfoBox(_event) {
         var x = _event.clientX;
         var y = _event.clientY;
-        var target = _event.target;
+        //let target: EventTarget = _event.target;
         span.style.left = x + "px";
         span.style.top = y + "px";
         span.innerHTML = "x position:" + x + "y position" + y;
