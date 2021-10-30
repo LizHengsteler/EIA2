@@ -35,7 +35,7 @@ namespace L02_Load {
      
   }
 
-    /*function setInfoBox (_event: MouseEvent): void {
+    function setInfoBox (_event: MouseEvent): void {
 
       let span: HTMLElement = document.createElement("span");
       span.classList.add("span");
@@ -51,11 +51,11 @@ namespace L02_Load {
       
       console.log(_event); //MouseEvent 
 
-  }*/
+  }
     function setInfoBox(_event: MouseEvent): void {
     
-      let x: number = _event.clientX;
-      let y: number = _event.clientY;
+      let x: number = _event.offsetX;
+      let y: number = _event.offsetY;
       let target: EventTarget = _event.target;
       span.style.left = x + "px";
       span.style.top = y + "px";

@@ -25,26 +25,22 @@ var L02_Load;
         document.addEventListener("keyup", logInfo);
         document.body.addEventListener("keyup", logInfo);
     }
-    /*function setInfoBox (_event: MouseEvent): void {
-
-      let span: HTMLElement = document.createElement("span");
-      span.classList.add("span");
-      document.body.appendChild(span);
-      
-      var x: number = _event.clientX;    //clientX vorbelegte Funktion
-      var y: number = _event.clientY;
-      //span.innerHTML = "position X = " + x + "px" + ", position Y = " + y + "px";
-      let target: EventTarget = _event.target;
-      //span.style.left = x + "px";
-      //span.style.top = y + "px";
-      span.innerHTML = "X: " + x + "px" + "<br>" + "Y: " + y + "px" + "<br>" + target ;
-      
-      console.log(_event); //MouseEvent
-
-  }*/
     function setInfoBox(_event) {
-        var x = _event.clientX;
+        var span = document.createElement("span");
+        span.classList.add("span");
+        document.body.appendChild(span);
+        var x = _event.clientX; //clientX vorbelegte Funktion  
         var y = _event.clientY;
+        //span.innerHTML = "position X = " + x + "px" + ", position Y = " + y + "px";
+        var target = _event.target;
+        //span.style.left = x + "px";
+        //span.style.top = y + "px";
+        span.innerHTML = "X: " + x + "px" + "<br>" + "Y: " + y + "px" + "<br>" + target;
+        console.log(_event); //MouseEvent 
+    }
+    function setInfoBox(_event) {
+        var x = _event.offsetX;
+        var y = _event.offsetY;
         var target = _event.target;
         span.style.left = x + "px";
         span.style.top = y + "px";
