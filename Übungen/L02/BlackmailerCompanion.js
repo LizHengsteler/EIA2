@@ -12,7 +12,7 @@ var BlackmailerCompanion;
         //console.log(_event);
         var x = _event.offsetX;
         var y = _event.offsetY;
-        var mail = _event.target;
+        var mail = _event.target; //gleicher Variablenname, aber unabhängig voneinander, da lokal definiert
         var letter = document.createElement("span");
         mail.appendChild(letter);
         letter.textContent = chosenCharacter;

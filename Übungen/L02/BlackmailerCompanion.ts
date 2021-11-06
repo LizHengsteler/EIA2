@@ -14,8 +14,8 @@ namespace BlackmailerCompanion {
        let x: number = _event.offsetX;
        let y: number = _event.offsetY; 
 
-       let mail: HTMLElement = <HTMLElement>_event.target;
-       let letter: HTMLSpanElement = document.createElement("span");
+       let mail: HTMLElement = <HTMLElement>_event.target; //gleicher Variablenname, aber unabhängig voneinander, da lokal definiert
+       let letter: HTMLSpanElement = document.createElement("span"); 
        mail.appendChild(letter);
 
        letter.textContent = chosenCharacter; 
