@@ -1,0 +1,30 @@
+body {
+    background-color: rgba(99, 153, 120, 0.74);
+}
+
+
+#cardSize {
+    width: 250px;
+  
+
+}
+#colorPicker {
+    width: 250px;
+   
+}
+#font {
+    width: 250px;
+}
+
+#inputField {
+    width: 250px;
+}
+
+#startButton {
+    position: absolute;
+
+
+    height: 40px;
+    width: 60px;
+    background-color: antiquewhite;
+}

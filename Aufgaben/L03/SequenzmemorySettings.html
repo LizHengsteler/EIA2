@@ -4,8 +4,8 @@
 <head>
 	<meta charset="utf-8" />
 	<title>FormElements</title>
-	<link rel="stylesheet" href="FormElements.css" type="text/css" media="screen" />
-	<script src="FormElements.js" type="text/javascript" charset="utf-8"></script> 
+	<link rel="stylesheet" href="SequenzmemorySettings.css" type="text/css" media="screen" />
+	<script src="SequenzmemorySettings.js" type="text/javascript" charset="utf-8"></script> 
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <input type="range" name="Slider" min="10px" max="100px" step="10" value="0" />
     </fieldset>
 
-	<fieldset id="fsText">
+	<fieldset id="colorPicker">
 		<legend> Color Picker </legend>
 		Choose your background!
 		<input type="color" name="Color" placeholder="red" id="color" value="#ff0000">
@@ -36,9 +36,26 @@
         <label for="radio2">Calibri</label>
         <input type="radio" name="Radiogroup" value="Helvetica" id="radio3" />
         <label for="radio3">Helvetica</label>
-		
+
 		
 	</fieldset>
+
+    <fieldset id="inputField">
+
+    <input type="text" name="Text" placeholder="write your memory word here" required />
+    </fieldset>
+
+    <fieldset id="timeSelection">
+		<legend>Stepper</legend>
+	
+		Select timer in minutes!
+		<input type="number" name="Stepper" step="0.5" min="0.5" max="3" value="min" />
+		<hr />
+		
+
+    
+    <button id="startButton">Start</button>
+    
 
 
 

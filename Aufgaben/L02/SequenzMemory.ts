@@ -1,9 +1,9 @@
 namespace SequenzMemory {
-    window.addEventListener("load", handleLoad);
+    //window.addEventListener("load", handleLoad);
 
-    let createPrompt: string = prompt("Enter your memory word here!");
+    /*let createPrompt: string = prompt("Enter your memory word here!");
     let inputPrompt: string = createPrompt;
-    //let splittedArray: string [] = [""];
+    let splittedArray: string [] = [""];
     let splittedArray: string [] = inputPrompt.split("");
 
   
@@ -31,17 +31,17 @@ namespace SequenzMemory {
         //console.log(randomNumber);
     }
         setTimeout(function (): void {
-        startGame();
+        //startGame();
       },           100 );
 
         
     } 
 
-    function startGame(): void {
+    /*function startGame(): void {
 
         createDiv.addEventListener("click", logInfo);
         
-        console.log("hello");
+        console.log("hello");*/
     }
     
-}
+
