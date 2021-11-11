@@ -3,6 +3,7 @@ namespace SequenzmemorySettings {
   let startButton: HTMLButtonElement;
   startButton = <HTMLButtonElement>document.querySelector("#startButton");
   startButton.addEventListener("click", startGame);
+  console.log(startGame);
 
   let input: HTMLInputElement;
   input = <HTMLInputElement>document.querySelector("#inputField");
