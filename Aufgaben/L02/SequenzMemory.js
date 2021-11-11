@@ -1,17 +1,18 @@
+"use strict";
 var SequenzMemory;
 (function (SequenzMemory) {
     window.addEventListener("load", handleLoad);
-    var createPrompt = prompt("Enter your memory word here!");
-    var inputPrompt = createPrompt;
+    let createPrompt = prompt("Enter your memory word here!");
+    let inputPrompt = createPrompt;
     //let splittedArray: string [] = [""];
-    var splittedArray = inputPrompt.split("");
+    let splittedArray = inputPrompt.split("");
     function handleLoad(_event) {
         mixCards();
     }
     function mixCards() {
-        for (var index = 0; index < createPrompt.length; index++) {
-            var randomNumber = Math.floor(Math.random() * (splittedArray.length));
-            var createDiv = document.createElement("div");
+        for (let index = 0; index < createPrompt.length; index++) {
+            let randomNumber = Math.floor(Math.random() * (splittedArray.length));
+            let createDiv = document.createElement("div");
             createDiv.classList.add("card" + randomNumber);
             document.body.appendChild(createDiv);
             createDiv.innerHTML = splittedArray[randomNumber];

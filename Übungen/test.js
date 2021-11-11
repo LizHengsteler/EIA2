@@ -1,3 +1,4 @@
+"use strict";
 /*let v: number = 1;
 v = v + "1";
 console.log(v);*/
@@ -9,18 +10,30 @@ console.log(a[1]);
 console.log(a[2]);
 console.log(a[3]);
 console.log(a[4]);*/
-var s = { "zahl": 7, "wahr": true, text: "Hallo" };
+/*let s = {"zahl": 7, "wahr": true, text: "Hallo"};
 console.log(s);
 console.log(s["key"]);
-//console.log(s.key);
-function isDivisible(dividend, divisor) { return (dividend % divisor == 0); }
-;
+console.log(s.key);
+
+
+function isDivisible(dividend, divisor) {return (dividend % divisor == 0)};
 isDivisible(4, 3);
 isDivisible(4, 2);
-function test(_x) {
+
+
+
+
+function test(_x: number) {
     console.log(_x);
     return _x * 2;
 }
-var y;
-y = test(172);
+
+
+let y: number;
+y = test (172);*/
+let v = 1;
+v = v + "1";
+console.log(v);
+let a = [7, true, "Hallo"];
+console.log(a[1]);
 //# sourceMappingURL=test.js.map

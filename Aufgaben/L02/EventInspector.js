@@ -1,13 +1,14 @@
+"use strict";
 var L02_Load;
 (function (L02_Load) {
     window.addEventListener("load", handleLoad);
-    var span; //globaler Zugriff
-    var button;
+    let span; //globaler Zugriff
+    let button;
     function handleLoad(_event) {
-        var div0 = document.createElement("div");
+        let div0 = document.createElement("div");
         div0.classList.add("div0");
         document.body.appendChild(div0);
-        var div1 = document.createElement("div");
+        let div1 = document.createElement("div");
         div1.classList.add("div1");
         document.body.appendChild(div1);
         span = document.querySelector(".span");
@@ -30,18 +31,18 @@ var L02_Load;
         div1.appendChild(button);*/
     }
     function setInfoBox(_event) {
-        var x = _event.clientX;
-        var y = _event.clientY;
-        var target = _event.target;
+        let x = _event.clientX;
+        let y = _event.clientY;
+        let target = _event.target;
         span.style.left = x + "px";
         span.style.top = y + "px";
         span.innerHTML = "Position von X: " + x + "px" + "<br>" + "Position von Y: " + y + "px" + "<br>" + target;
     }
     function logInfo(_event) {
-        console.log(_event.type);
+        //console.log(_event.type);
         console.log(_event.target);
         console.log(_event.currentTarget);
-        console.log(_event);
+        //console.log(_event);
     }
 })(L02_Load || (L02_Load = {}));
 //# sourceMappingURL=EventInspector.js.map
