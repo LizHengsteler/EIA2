@@ -13,6 +13,7 @@ namespace SequenzmemorySettings {
   let fontColor: HTMLInputElement;
   let input: HTMLInputElement;
   let stepperTime: HTMLInputElement;
+  let card: HTMLSpanElement;
 
   
 
@@ -47,6 +48,9 @@ namespace SequenzmemorySettings {
     //console.log(formData);
     for (let entry of formData) {
       console.log(entry);
+      let item: HTMLInputElement = <HTMLInputElement>document.querySelector("[value='" + entry[1] + "']");
+      console.log(item);
+      
     }
   }
   
@@ -60,19 +64,31 @@ namespace SequenzmemorySettings {
       let shuffleNumber: number = Math.floor(
         Math.random() * sequenceArray.length
       );
-      console.log(shuffleNumber);
-      let createSpan: HTMLSpanElement = document.createElement("span");
-      createSpan.innerHTML = sequenceArray[shuffleNumber];
+      //console.log(shuffleNumber);
+      card = <HTMLSpanElement>document.createElement("span");
+      document.body.appendChild(card);
+      card.innerHTML = sequenceArray[shuffleNumber];
       sequenceArray.splice(shuffleNumber, 1);
       console.log(sequenceArray);
+      card.classList.add("card" + index);
+
     }
     setTimeout(function (): void {
+
       hideCards();
     },         2000 );
 
   }
 
   function hideCards(): void {
+    let savedArray: string [];
+    savedArray = input.value.split("");
+    for (let index = 0; index <= savedArray.length; index++) {
+
+    }
+
+    card.classList.add("hidden");
+    
     console.log("Hello");
 
     

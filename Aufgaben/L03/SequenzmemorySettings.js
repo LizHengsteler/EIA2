@@ -14,6 +14,7 @@ var SequenzmemorySettings;
     let fontColor;
     let input;
     let stepperTime;
+    let card;
     //let form: HTMLDivElement = <HTMLDivElement>document.querySelector("div#form");
     //console.log(formData);
     function handleLoad(_event) {
@@ -37,6 +38,8 @@ var SequenzmemorySettings;
         //console.log(formData);
         for (let entry of formData) {
             console.log(entry);
+            let item = document.querySelector("[value='" + entry[1] + "']");
+            console.log(item);
         }
     }
     function startGame() {
@@ -45,17 +48,24 @@ var SequenzmemorySettings;
         sequenceArray = input.value.split("");
         for (let index = 0; index <= sequenceArray.length; index++) {
             let shuffleNumber = Math.floor(Math.random() * sequenceArray.length);
-            console.log(shuffleNumber);
-            let createSpan = document.createElement("span");
-            createSpan.innerHTML = sequenceArray[shuffleNumber];
+            //console.log(shuffleNumber);
+            card = document.createElement("span");
+            document.body.appendChild(card);
+            card.innerHTML = sequenceArray[shuffleNumber];
             sequenceArray.splice(shuffleNumber, 1);
             console.log(sequenceArray);
+            card.classList.add("card" + index);
         }
         setTimeout(function () {
             hideCards();
         }, 2000);
     }
     function hideCards() {
+        let savedArray;
+        savedArray = input.value.split("");
+        for (let index = 0; index <= savedArray.length; index++) {
+        }
+        card.classList.add("hidden");
         console.log("Hello");
     }
 })(SequenzmemorySettings || (SequenzmemorySettings = {}));

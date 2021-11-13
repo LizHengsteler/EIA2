@@ -1,8 +1,12 @@
 body {
     background-color: rgba(99, 153, 120, 0.74);
+    align-items: center;
 }
 span {
-    background-color: black;
+    border-style: dotted;
+    border-color: black;
+    padding: 20px;
+    margin: 20px;
 }
 
 
