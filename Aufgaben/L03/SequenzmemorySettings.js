@@ -15,6 +15,7 @@ var SequenzmemorySettings;
     let input;
     let stepperTime;
     let card;
+    let savedArray;
     //let form: HTMLDivElement = <HTMLDivElement>document.querySelector("div#form");
     //console.log(formData);
     function handleLoad(_event) {
@@ -24,11 +25,11 @@ var SequenzmemorySettings;
         document.querySelector("input#size");
         startButton = document.getElementById("startButton");
         startButton.addEventListener("click", startGame);
-        frame.addEventListener("change", handleChange);
+        frame.addEventListener("change", handleForm);
         //handleChange(_event);
     }
     //console.log(startGame);
-    function handleChange(_event) {
+    function handleForm(_event) {
         /*let inputs: NodeListOf<HTMLInputElement> =
           document.querySelectorAll("input");
         console.log(inputs);
@@ -38,7 +39,7 @@ var SequenzmemorySettings;
         //console.log(formData);
         for (let entry of formData) {
             console.log(entry);
-            let item = document.querySelector("[value='" + entry[1] + "']");
+            let item = (document.querySelector("[value='" + entry[1] + "']"));
             console.log(item);
         }
     }
@@ -56,13 +57,16 @@ var SequenzmemorySettings;
             console.log(sequenceArray);
             card.classList.add("card" + index);
         }
-        setTimeout(function () {
-            hideCards();
-        }, 2000);
+        /*setTimeout(function (): void {
+    
+          hideCards();
+        },         2000 );*/
     }
     function hideCards() {
-        let savedArray;
-        savedArray = input.value.split("");
+        let savedArray = NodeListOf < HTMLSpanElement > document.querySelectorAll("span");
+        //savedArray.push(input.value); 
+        console.log(savedArray);
+        //savedArray = input.value.split("");
         for (let index = 0; index <= savedArray.length; index++) {
         }
         card.classList.add("hidden");

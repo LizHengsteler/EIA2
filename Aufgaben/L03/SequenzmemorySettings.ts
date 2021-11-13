@@ -14,31 +14,26 @@ namespace SequenzmemorySettings {
   let input: HTMLInputElement;
   let stepperTime: HTMLInputElement;
   let card: HTMLSpanElement;
-
-  
+  let savedArray: HTMLSpanElement[];
 
   //let form: HTMLDivElement = <HTMLDivElement>document.querySelector("div#form");
   //console.log(formData);
 
   function handleLoad(_event: Event): void {
-    
     input = <HTMLInputElement>document.querySelector("#codeWord");
     frame = <HTMLDivElement>document.querySelector("#formFrame");
-    
+
     //let slider: HTMLInputElement = <HTMLInputElement>(
     document.querySelector("input#size");
     startButton = <HTMLButtonElement>document.getElementById("startButton");
     startButton.addEventListener("click", startGame);
-    frame.addEventListener("change", handleChange);
-    
+    frame.addEventListener("change", handleForm);
+
     //handleChange(_event);
-  
   }
   //console.log(startGame);
 
-  
-
-  function handleChange(_event: Event): void {
+  function handleForm(_event: Event): void {
     /*let inputs: NodeListOf<HTMLInputElement> =
       document.querySelectorAll("input");
     console.log(inputs);
@@ -48,12 +43,12 @@ namespace SequenzmemorySettings {
     //console.log(formData);
     for (let entry of formData) {
       console.log(entry);
-      let item: HTMLInputElement = <HTMLInputElement>document.querySelector("[value='" + entry[1] + "']");
+      let item: HTMLInputElement = <HTMLInputElement>(
+        document.querySelector("[value='" + entry[1] + "']")
+      );
       console.log(item);
-      
     }
   }
-  
 
   function startGame(): void {
     frame = <HTMLDivElement>document.getElementById("formFrame");
@@ -71,19 +66,25 @@ namespace SequenzmemorySettings {
       sequenceArray.splice(shuffleNumber, 1);
       console.log(sequenceArray);
       card.classList.add("card" + index);
-
+      
     }
-    setTimeout(function (): void {
+    /*setTimeout(function (): void {
 
       hideCards();
-    },         2000 );
-
+    },         2000 );*/
   }
 
   function hideCards(): void {
-    let savedArray: string [];
-    savedArray = input.value.split("");
+    let savedArray = NodeListOf<HTMLSpanElement>document.querySelectorAll("span");
+    
+
+    //savedArray.push(input.value); 
+    console.log(savedArray);
+    //savedArray = input.value.split("");
+
     for (let index = 0; index <= savedArray.length; index++) {
+      
+
 
     }
 
@@ -94,4 +95,3 @@ namespace SequenzmemorySettings {
     
   }
 }
-
