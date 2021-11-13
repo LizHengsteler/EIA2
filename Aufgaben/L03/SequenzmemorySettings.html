@@ -3,59 +3,66 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>FormElements</title>
+	<title>Sequenzmemory</title>
 	<link rel="stylesheet" href="SequenzmemorySettings.css" type="text/css" media="screen" />
-	<script src="SequenzmemorySettings.js" type="text/javascript" charset="utf-8"></script> 
+	<script src="SequenzmemorySettings.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
 	<h1>Sequenzmemory</h1>
+	<form>
+		<div id="formFrame">
 
-    <fieldset id="cardSize">
-        <legend> Slider </legend>
-        Choose your card size!
-        <input type="range" name="Slider" min="10px" max="100px" step="10" value="0" />
-    </fieldset>
 
-	<fieldset id="colorPicker">
-		<legend> Color Picker </legend>
-		Choose your background!
-		<input type="color" name="Color" placeholder="red" id="color" value="#ff0000">
-		Choose your card color!
-		<input type="color" name="Color" placeholder="green" id="color" value="#00ff00">
-        Choose your text color!
-		<input type="color" name="Color" placeholder="blue" id="color" value="#0000ff">
-	</fieldset>
 
-	<fieldset id="font">
-	
-		
-        <input type="radio" name="Radiogroup" value="Arial" id="radio1" />
-        <label for="radio1">Arial</label>
-        <input type="radio" name="Radiogroup" value="Calibri" id="radio2" />
-        <label for="radio2">Calibri</label>
-        <input type="radio" name="Radiogroup" value="Helvetica" id="radio3" />
-        <label for="radio3">Helvetica</label>
+			<fieldset id="cardSize">
+				<legend> Slider </legend>
+				Choose your card size!
+				<input id="size" type="range" name="Slider" min="10px" max="100px" step="10" value="0" />
+			</fieldset>
 
-		
-	</fieldset>
+			<fieldset id="colorPicker">
+				<legend> Color Picker </legend>
+				Choose your background!
+				<input type="color" name="Color" placeholder="red" id="color1" value="#ff0000">
+				Choose your card color!
+				<input type="color" name="Color" placeholder="green" id="color2" value="#00ff00">
+				Choose your font color!
+				<input type="color" name="Color" placeholder="blue" id="color3" value="#0000ff">
+			</fieldset>
 
-    <fieldset id="inputField">
+			<fieldset id="font">
 
-    <input type="text" name="Text" placeholder="write your memory word here" required />
-    </fieldset>
 
-    <fieldset id="timeSelection">
-		<legend>Stepper</legend>
-	
-		Select timer in minutes!
-		<input type="number" name="Stepper" step="0.5" min="0.5" max="3" value="min" />
-		<hr />
-		
+				<select name="Select" id="select">
+					<option value="option1">Arial</option>
+					<option value="option2" selected>Helvetica</option>
+					<option value="option3">Times New Roman</option>
 
-    
-    <button id="startButton">Start</button>
-    
+				</select>
+
+
+			</fieldset>
+
+			<fieldset id="inputField">
+
+				<input id="codeWord" type="text" name="Text" placeholder="write your memory word here" required />
+			</fieldset>
+
+			<fieldset id="timeSelection">
+				<legend>Stepper</legend>
+
+				Select timer in minutes!
+				<input type="number" name="Stepper" step="0.5" min="0.5" max="3" value="0" />
+				<hr />
+
+	</form>
+
+
+
+	<button id="startButton" type="button">Start</button>
+	</div>
+
 
 
 

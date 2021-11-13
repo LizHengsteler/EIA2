@@ -1,6 +1,9 @@
 body {
     background-color: rgba(99, 153, 120, 0.74);
 }
+span {
+    background-color: black;
+}
 
 
 #cardSize {
@@ -28,3 +31,7 @@ body {
     width: 60px;
     background-color: antiquewhite;
 }
+
+.hidden {
+    display: none !important;
+  }
