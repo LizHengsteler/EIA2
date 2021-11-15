@@ -1,5 +1,7 @@
 "use strict";
-//Zusammenarbeit mit Theo
+/*Zusammenarbeit mit Theo
+noch nicht zu 100% lauffähig, aber ein Anfang:)
+*/
 var SequenzmemorySettings;
 (function (SequenzmemorySettings) {
     window.addEventListener("load", handleLoad);
@@ -21,8 +23,9 @@ var SequenzmemorySettings;
     function handleLoad(_event) {
         input = document.querySelector("#codeWord");
         frame = document.querySelector("#formFrame");
-        //let slider: HTMLInputElement = <HTMLInputElement>(
-        document.querySelector("input#size");
+        slider =
+            //let slider: HTMLInputElement = <HTMLInputElement>(
+            document.querySelector("input#size");
         startButton = document.getElementById("startButton");
         startButton.addEventListener("click", startGame);
         frame.addEventListener("change", handleForm);
@@ -36,11 +39,11 @@ var SequenzmemorySettings;
         let font: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
         console.log(font.value);*/
         let formData = new FormData(document.forms[0]);
-        //console.log(formData);
+        console.log(formData);
         for (let entry of formData) {
             console.log(entry);
             let item = (document.querySelector("[value='" + entry[1] + "']"));
-            console.log(item);
+            //console.log(item);
         }
     }
     function startGame() {
@@ -57,13 +60,12 @@ var SequenzmemorySettings;
             console.log(sequenceArray);
             card.classList.add("card" + index);
         }
-        /*setTimeout(function (): void {
-    
-          hideCards();
-        },         2000 );*/
+        setTimeout(function () {
+            hideCards();
+        }, 2000);
     }
     function hideCards() {
-        let savedArray = NodeListOf < HTMLSpanElement > document.querySelectorAll("span");
+        //let savedArray = NodeListOf<HTMLSpanElement>document.querySelectorAll("span");
         //savedArray.push(input.value); 
         console.log(savedArray);
         //savedArray = input.value.split("");

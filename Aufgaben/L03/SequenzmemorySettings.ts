@@ -1,4 +1,7 @@
-//Zusammenarbeit mit Theo
+/*Zusammenarbeit mit Theo
+noch nicht zu 100% lauffähig, aber ein Anfang:) 
+*/
+
 namespace SequenzmemorySettings {
   window.addEventListener("load", handleLoad);
 
@@ -22,6 +25,7 @@ namespace SequenzmemorySettings {
   function handleLoad(_event: Event): void {
     input = <HTMLInputElement>document.querySelector("#codeWord");
     frame = <HTMLDivElement>document.querySelector("#formFrame");
+    slider = 
 
     //let slider: HTMLInputElement = <HTMLInputElement>(
     document.querySelector("input#size");
@@ -40,13 +44,14 @@ namespace SequenzmemorySettings {
     let font: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
     console.log(font.value);*/
     let formData: FormData = new FormData(document.forms[0]);
-    //console.log(formData);
+    
+    console.log(formData);
     for (let entry of formData) {
       console.log(entry);
       let item: HTMLInputElement = <HTMLInputElement>(
         document.querySelector("[value='" + entry[1] + "']")
       );
-      console.log(item);
+      //console.log(item);
     }
   }
 
@@ -68,14 +73,14 @@ namespace SequenzmemorySettings {
       card.classList.add("card" + index);
       
     }
-    /*setTimeout(function (): void {
+    setTimeout(function (): void {
 
       hideCards();
-    },         2000 );*/
+    },         2000 );
   }
 
   function hideCards(): void {
-    let savedArray = NodeListOf<HTMLSpanElement>document.querySelectorAll("span");
+    //let savedArray = NodeListOf<HTMLSpanElement>document.querySelectorAll("span");
     
 
     //savedArray.push(input.value); 
@@ -83,8 +88,6 @@ namespace SequenzmemorySettings {
     //savedArray = input.value.split("");
 
     for (let index = 0; index <= savedArray.length; index++) {
-      
-
 
     }
 
