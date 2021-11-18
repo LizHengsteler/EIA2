@@ -2,6 +2,15 @@ namespace GenerativeKunst {
   let crc2: CanvasRenderingContext2D;
   let x: number;
   let y: number;
+  let radius: number;
+  let hue: number;
+  let saturation: number;
+  let lightness: number;
+  let dx: number = 2;
+  let dy: number = 2; 
+  let randomColor1: number [] = [];
+  let randomColor2: number [] = [];
+  let randomColor3: number [] = [];
 
   window.addEventListener("load", hndLoad);
 
@@ -9,32 +18,32 @@ namespace GenerativeKunst {
     let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    //console.log(canvas);
-
+    
     crc2 = canvas.getContext("2d")!;
 
-    for (let i: number = 0; i < 100; i++) {
-        x = Math.random() * 100;
-        y = Math.random() * 100;
-      }
-    drawBalls(); 
+    
+    x = Math.round(Math.random() * 100);
+    y = Math.round(Math.random() * 100);
+    
+
+
+    //drawBalls(); 
     
     drawBouncingBall();
   }
 
-  function drawBalls (): void {
+  /*function drawBalls (): void {
     for (let i: number = 0; i < 100; i++) {
         x = Math.random() * 100;
         y = Math.random() * 100;
       }
     let dx: number = 2;
     let dy: number = 2;
-    let radius: number = 40;
+    radius = 40;
 
-    //window.requestAnimationFrame(drawBalls);
-
-    //crc2.clearRect(0, 0, innerWidth, innerHeight);
+    window.requestAnimationFrame(drawBalls);
     
+    //crc2.clearRect(0, 0, innerWidth, innerHeight);
     crc2.beginPath();
     crc2.arc(x, y, radius, 0, Math.PI * 2, false);
     crc2.strokeStyle = "#ffffff";
@@ -49,30 +58,31 @@ namespace GenerativeKunst {
     x += dx * 2;
     y += dy * 2;
       
-  }
+  }*/
 
-  function drawBouncingBall(): void { //Warum bounct er nicht an der Wand ab?
-
+  function drawBouncingBall(): void { 
+    hue = Math.round(Math.random() * 360);
+    saturation = Math.round(Math.random() * 100);
+    lightness = Math.round(Math.random () * 100);
     
-    let dx: number = 2;
-    let dy: number = 2;
-    let radius: number = 40;
-
+    radius = 40;
     window.requestAnimationFrame(drawBouncingBall);
-    let purple: number = Math.floor(Math.random() * 200);
+    randomColor1 = [hue, saturation, lightness];
+    randomColor2 = [hue, saturation, lightness];
+    randomColor3 = [hue, saturation, lightness];
+    /*let purple: number = Math.floor(Math.random() * 200);
     let yellow: number = Math.floor(Math.random() * 400);
-    let blue: number = Math.floor(Math.random() * 600);
-
-    //crc2.clearRect(0, 0, innerWidth, innerHeight);
+    let blue: number = Math.floor(Math.random() * 600);*/
     crc2.beginPath();
     crc2.arc(x, y, radius, 0, Math.PI * 2, false);
-    crc2.strokeStyle = "rgb(" + purple + ", " + yellow + "," + blue + ")";
+    //crc2.strokeStyle = "hsl(" + randomColor1 + ", " + randomColor2 + "," + randomColor3 + ")";
+    crc2.strokeStyle = "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
     crc2.stroke();
 
-    if (x + radius > innerWidth && x - radius < 0) {
+    if (x + radius >= innerWidth || x - radius < 0) { // || oder
       dx = -dx;
     }
-    if (y + radius > innerHeight && y - radius < 0) {
+    if (y + radius >= innerHeight || y - radius < 0) {
       dy = -dy;
     }
     x += dx * 2;

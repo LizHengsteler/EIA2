@@ -68,7 +68,7 @@ namespace SequenzmemorySettings {
       card = <HTMLSpanElement>document.createElement("span");
       document.body.appendChild(card);
       card.innerHTML = sequenceArray[shuffleNumber];
-      sequenceArray.splice(shuffleNumber, 1);
+      sequenceArray.splice(shuffleNumber, 1); // Kopie von zufälligem Array, und da reinspeichern; theoretisch braucht man kein Splive sondern nur sequence[i]
       console.log(sequenceArray);
       card.classList.add("card" + index);
       
