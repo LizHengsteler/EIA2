@@ -10,9 +10,6 @@ var GenerativeKunst;
     let lightness;
     let dx = 2;
     let dy = 2;
-    let randomColor1 = [];
-    let randomColor2 = [];
-    let randomColor3 = [];
     window.addEventListener("load", hndLoad);
     function hndLoad(_event) {
         let canvas = document.querySelector("canvas");
@@ -24,26 +21,18 @@ var GenerativeKunst;
         crc2 = canvas.getContext("2d");
         x = Math.round(Math.random() * innerWidth);
         y = Math.round(Math.random() * innerHeight);
-        drawBouncingBall();
+        drawBouncingBallBig();
     }
-    function drawBouncingBall() {
-        /*hue = Math.round(Math.random() * 360);
-        saturation = Math.round(Math.random() * 100);
-        lightness = Math.round(Math.random () * 100);*/
+    function drawBouncingBallBig() {
         radius = 40;
-        window.requestAnimationFrame(drawBouncingBall);
-        randomColor1 = [hue, saturation, lightness];
-        randomColor2 = [hue, saturation, lightness];
-        randomColor3 = [hue, saturation, lightness];
-        /*let purple: number = Math.floor(Math.random() * 200);
-        let yellow: number = Math.floor(Math.random() * 400);
-        let blue: number = Math.floor(Math.random() * 600);*/
+        window.requestAnimationFrame(drawBouncingBallBig);
         crc2.beginPath();
         crc2.arc(x, y, radius, 0, Math.PI * 2, false);
-        //crc2.strokeStyle = "hsl(" + randomColor1 + ", " + randomColor2 + "," + randomColor3 + ")";
-        crc2.strokeStyle = "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
+        crc2.strokeStyle =
+            "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
         crc2.stroke();
-        if (x + radius >= innerWidth || x - radius < 0) { // || oder
+        if (x + radius >= innerWidth || x - radius < 0) {
+            // || oder
             dx = -dx;
         }
         if (y + radius >= innerHeight || y - radius < 0) {
@@ -51,6 +40,7 @@ var GenerativeKunst;
         }
         x += dx * 2;
         y += dy * 2;
+        crc2.closePath();
     }
 })(GenerativeKunst || (GenerativeKunst = {}));
 //# sourceMappingURL=GenerativeKunst.js.map
