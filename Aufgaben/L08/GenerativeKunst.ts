@@ -22,15 +22,19 @@ namespace GenerativeKunst {
 
     crc2 = canvas.getContext("2d")!;
 
+
     x = Math.round(Math.random() * innerWidth);
     y = Math.round(Math.random() * innerHeight);
 
-    drawBouncingBallBig();
+    drawBouncingBall();
+    
   }
 
-  function drawBouncingBallBig(): void {
+  
+
+  function drawBouncingBall(): void {
     radius = 40;
-    window.requestAnimationFrame(drawBouncingBallBig);
+    window.requestAnimationFrame(drawBouncingBall);
 
     crc2.beginPath();
     crc2.arc(x, y, radius, 0, Math.PI * 2, false);

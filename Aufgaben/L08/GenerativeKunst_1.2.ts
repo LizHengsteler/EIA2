@@ -1,4 +1,6 @@
 namespace GenerativeKunst_1 {
+  /* Ich hab mich ein bisschen ausprobiert, aber ich hab das Gefühl, dass ich viele Dinge besser zusammenfassen könnte,
+  leider konnt ich nicht rausfinden wie, vielleicht kannst du mir da helfen oder Tipps geben:)*/
   let crc2: CanvasRenderingContext2D;
   let x: number;
   let y: number;
@@ -12,58 +14,111 @@ namespace GenerativeKunst_1 {
     let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    
 
     crc2 = canvas.getContext("2d")!;
-    //console.log(crc2);
 
     for (let i: number = 0; i < 50; i++) {
       x = Math.random() * innerWidth;
       y = Math.random() * innerHeight;
-      drawTriangle(x, y);
-      //drawBoxes(x, y);
-    }
-    for (let i: number = 0; i < 50; i++) {
-      x = Math.random() * innerWidth;
-      y = Math.random() * innerHeight;
-      //drawTriangle(x, y);
-      drawBoxes(x, y);
+
+      drawBall(x, y);
+      drawLines(x, y);
+      drawLines2(x, y);
+      drawBubble(x, y);
+      //drawCurves();
+      backgroundColor();
     }
   }
 
-  function drawTriangle(_x: number, _y: number): void {
+  function backgroundColor(): void {
     hue = Math.round(Math.random() * 360);
     saturation = Math.round(Math.random() * 50);
-    lightness = Math.round(Math.random () * 100);
-    crc2.beginPath();
-    crc2.moveTo(_x, _y);
-    crc2.lineTo(_x, _y + 70);
-    crc2.lineTo(_x + 80, _y + 35);
-    crc2.closePath();
+    lightness = Math.round(Math.random() * 100);
+    document.body.style.backgroundColor =
+      "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
+  }
 
-    crc2.fillStyle = "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
-    crc2.strokeStyle = "hsl(";
-    crc2.lineWidth = 5;
+  /*function drawCurves(): void {
+    x = Math.random() * innerWidth;
+    y = Math.random() * innerHeight;
+    hue = Math.round(Math.random() * 360);
+    saturation = Math.round(Math.random() * 50);
+    lightness = Math.round(Math.random() * 100);
+    crc2.beginPath();
+    crc2.moveTo(x, y);
+    crc2.bezierCurveTo(20, 100, 200, 100, y, x);
+    crc2.strokeStyle = "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
+    crc2.lineWidth = 1;
     crc2.stroke();
+  } hat mir nicht gefallen*/
+
+  function drawLines(_x: number, _y: number): void {
+    x = Math.random() * innerWidth;
+    y = Math.random() * innerHeight;
+    hue = Math.round(Math.random() * 360);
+    saturation = Math.round(Math.random() * 50);
+    lightness = Math.round(Math.random() * 100);
+    crc2.beginPath();
+    crc2.moveTo(x, y);
+    crc2.lineTo(y, x);
+    crc2.lineWidth = 1;
+    crc2.strokeStyle =
+      "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
+    crc2.stroke();
+  }
+
+  function drawLines2(_x: number, _y: number): void {
+    x = Math.random() * innerWidth;
+    y = Math.random() * innerHeight;
+    let random1: number = Math.random();
+    let random2: number = Math.random();
+    hue = Math.round(Math.random() * 360);
+    saturation = Math.round(Math.random() * 50);
+    lightness = Math.round(Math.random() * 100);
+    crc2.beginPath();
+    crc2.moveTo(x, random1);
+    crc2.lineTo(random2, y);
+    crc2.lineWidth = 1;
+    crc2.strokeStyle =
+      "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
+    crc2.stroke();
+  }
+
+  function drawBall(_x: number, _y: number): void {
+    hue = Math.round(Math.random() * 360);
+    saturation = Math.round(Math.random() * 50);
+    lightness = Math.round(Math.random() * 100);
+    radius = 40;
+    x = Math.random() * innerWidth;
+    y = Math.random() * innerHeight;
+
+    crc2.beginPath();
+    crc2.arc(x, y, radius, 0, Math.PI * 2, false);
+
+    crc2.fillStyle =
+      "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
+    crc2.lineWidth = 3;
     crc2.fill();
 
-    /*crc2.beginPath();
-    crc2.fillRect(100, 100, 100, 100);
-    crc2.closePath();*/
-    
+    crc2.closePath();
   }
 
-  function drawBoxes(_x: number, _y: number): void {
+  function drawBubble(_x: number, _y: number): void {
     hue = Math.round(Math.random() * 360);
     saturation = Math.round(Math.random() * 50);
-    lightness = Math.round(Math.random () * 100);
+    lightness = Math.round(Math.random() * 100);
+    radius = 40;
+    x = Math.random() * innerWidth;
+    y = Math.random() * innerHeight;
 
     crc2.beginPath();
-    crc2.fillRect(100, 100, 100, 100);
-    crc2.moveTo(_x, _y);
-    crc2.fillStyle = "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
+    crc2.arc(x, y, radius, 0, Math.PI * 2, false);
 
+    crc2.strokeStyle =
+      "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
+    crc2.lineWidth = 3;
+    crc2.stroke();
+
+    crc2.closePath();
   }
-
-  
 }
