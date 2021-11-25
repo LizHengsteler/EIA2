@@ -1,8 +1,22 @@
 "use strict";
 var GenerativeKunst_1;
 (function (GenerativeKunst_1) {
+    /*Aufgabe: L08.1 Generative Kunst
+    Name: Liz Hengsteler
+    Matrikel: 268386
+    Datum: 20.11.2021
+    Quellen: */
     /* Ich hab mich ein bisschen ausprobiert, aber ich hab das Gefühl, dass ich viele Dinge besser zusammenfassen könnte,
-    leider konnt ich nicht rausfinden wie, vielleicht kannst du mir da helfen oder Tipps geben:)*/
+    leider konnt ich nicht rausfinden wie, vielleicht kannst du mir da helfen oder Tipps geben:)
+  
+    21.11.|14:53 Zwei coole Abgaben, wenn du noch mit mehr Bedingungen gearbeitet hättest, hätte ich nicht viel zu bemerken.
+     Zuerst sollte aber die Änderung der BackgroundColor nicht in die Schleife rein, da letztendlich nur eine Hintergrundfarbe
+     zu sehen sein wird. Beide Lines-Funktionen zeichnen nur eine Line, da wäre Singular im Funktionsnamen besser.
+     Einiges könnte echt noch gut zusammengefasst werden: durch eine Abfrage in der Schleife könnten die Lines-Funktionen
+     zu einer zusammengefasst werden (auch Ball und Bubble), indem sie z.B. einen weiteren Parameter annehmen und der
+     bei jeder zweiter Schleifeninteration true/ false ist; dann könnten die paar unterschiedlichen Zeilen in den Funktionen
+     je nach dem boolean durchgeführt werden. Auch die Erstellung neuer Zahlenwerte für die Farbe könnten sehr gut in eine
+     Funktion passen. Sonst wie gesagt sehr schön (MD)*/
     let crc2;
     let x;
     let y;
@@ -16,6 +30,7 @@ var GenerativeKunst_1;
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         crc2 = canvas.getContext("2d");
+        backgroundColor();
         for (let i = 0; i < 50; i++) {
             x = Math.random() * innerWidth;
             y = Math.random() * innerHeight;
@@ -23,8 +38,6 @@ var GenerativeKunst_1;
             drawLines(x, y);
             drawLines2(x, y);
             drawBubble(x, y);
-            //drawCurves();
-            backgroundColor();
         }
     }
     function backgroundColor() {
@@ -34,19 +47,6 @@ var GenerativeKunst_1;
         document.body.style.backgroundColor =
             "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
     }
-    /*function drawCurves(): void {
-      x = Math.random() * innerWidth;
-      y = Math.random() * innerHeight;
-      hue = Math.round(Math.random() * 360);
-      saturation = Math.round(Math.random() * 50);
-      lightness = Math.round(Math.random() * 100);
-      crc2.beginPath();
-      crc2.moveTo(x, y);
-      crc2.bezierCurveTo(20, 100, 200, 100, y, x);
-      crc2.strokeStyle = "hsl(" + hue + "," + saturation + "% , " + lightness + "%" + ")";
-      crc2.lineWidth = 1;
-      crc2.stroke();
-    } hat mir nicht gefallen*/
     function drawLines(_x, _y) {
         x = Math.random() * innerWidth;
         y = Math.random() * innerHeight;

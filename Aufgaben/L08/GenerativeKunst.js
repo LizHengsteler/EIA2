@@ -1,6 +1,11 @@
 "use strict";
 var GenerativeKunst;
 (function (GenerativeKunst) {
+    /*Aufgabe: L08.1 Generative Kunst
+    Name: Liz Hengsteler
+    Matrikel: 268386
+    Datum: 20.11.2021
+    Quellen: */
     let crc2;
     let x;
     let y;
