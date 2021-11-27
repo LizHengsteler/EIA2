@@ -154,10 +154,12 @@ namespace GoldenerHerbst {
 
   function drawFirs(): void {
     let nFirs: number = 10;
+    let x: number = Math.round(Math.random());
 
     for (let drawn: number = 0; drawn < nFirs; drawn++) {
+      
       crc2.save();
-      x = x + 20;
+      x += x + Math.round(Math.random());
       crc2.translate(x, y);
       drawFir();
       crc2.restore();
@@ -165,7 +167,7 @@ namespace GoldenerHerbst {
   }
 
   function drawLeaves(): void {
-    let nLeaves: number = 20;
+    let nLeaves: number = 15;
     let x: number = Math.round(Math.random());
     let y: number = Math.round(Math.random());
     
@@ -174,8 +176,8 @@ namespace GoldenerHerbst {
 
     for (let drawn: number = 0; drawn < nLeaves; drawn++) {
       crc2.save();
-      x += x + Math.random() * 20;
-      y += y +  Math.random() * 20;
+      x += x + Math.round(Math.random());
+      y += y +  Math.round(Math.random());
       crc2.translate(x, y);
       crc2.rotate(x);
       drawLeave1();
@@ -255,7 +257,5 @@ namespace GoldenerHerbst {
     crc2.restore();
   }
 
-  /*function drawTree(): void {
-        console.log("tree");
-    }*/
+  
 }

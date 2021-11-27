@@ -102,22 +102,23 @@ var GoldenerHerbst;
     }
     function drawFirs() {
         let nFirs = 10;
+        let x = Math.round(Math.random());
         for (let drawn = 0; drawn < nFirs; drawn++) {
             crc2.save();
-            x = x + 20;
+            x += x + Math.round(Math.random());
             crc2.translate(x, y);
             drawFir();
             crc2.restore();
         }
     }
     function drawLeaves() {
-        let nLeaves = 20;
+        let nLeaves = 15;
         let x = Math.round(Math.random());
         let y = Math.round(Math.random());
         for (let drawn = 0; drawn < nLeaves; drawn++) {
             crc2.save();
-            x += x + Math.random() * 20;
-            y += y + Math.random() * 20;
+            x += x + Math.round(Math.random());
+            y += y + Math.round(Math.random());
             crc2.translate(x, y);
             crc2.rotate(x);
             drawLeave1();
@@ -187,8 +188,5 @@ var GoldenerHerbst;
         crc2.fill();
         crc2.restore();
     }
-    /*function drawTree(): void {
-          console.log("tree");
-      }*/
 })(GoldenerHerbst || (GoldenerHerbst = {}));
 //# sourceMappingURL=L08.2_GoldenerHerbst.js.map
