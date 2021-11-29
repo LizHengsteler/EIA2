@@ -1,6 +1,7 @@
 "use strict";
 var GoldenerHerbst;
 (function (GoldenerHerbst) {
+    let canvas = document.querySelector("canvas");
     window.addEventListener("load", handleLoad);
     let crc2;
     let golden = 0.62;
@@ -10,6 +11,8 @@ var GoldenerHerbst;
     function handleLoad(_event) {
         console.log("loaded");
         let canvas = document.querySelector("canvas");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
         if (!canvas)
             return;
         crc2 = canvas.getContext("2d");
@@ -102,9 +105,10 @@ var GoldenerHerbst;
     }
     function drawFirs() {
         let nFirs = 10;
-        let x = Math.round(Math.random());
+        let x = 1;
         for (let drawn = 0; drawn < nFirs; drawn++) {
             crc2.save();
+            x = (Math.random() - 0.5);
             x += x + Math.round(Math.random());
             crc2.translate(x, y);
             drawFir();

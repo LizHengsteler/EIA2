@@ -8,16 +8,21 @@ namespace GoldenerHerbst {
     x: number;
     y: number;
   }
+  let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
 
   window.addEventListener("load", handleLoad);
+  
   let crc2: CanvasRenderingContext2D;
   let golden: number = 0.62;
   let horizon: number;
   let x: number = 0;
   let y: number = 0;
   function handleLoad(_event: Event): void {
+    
     console.log("loaded");
-    let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
+    let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     if (!canvas) return;
     crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
@@ -154,11 +159,13 @@ namespace GoldenerHerbst {
 
   function drawFirs(): void {
     let nFirs: number = 10;
-    let x: number = Math.round(Math.random());
+    let x: number = 1;
 
     for (let drawn: number = 0; drawn < nFirs; drawn++) {
       
       crc2.save();
+      x = (Math.random() - 0.5);
+      
       x += x + Math.round(Math.random());
       crc2.translate(x, y);
       drawFir();
@@ -172,7 +179,6 @@ namespace GoldenerHerbst {
     let y: number = Math.round(Math.random());
     
     
-
 
     for (let drawn: number = 0; drawn < nLeaves; drawn++) {
       crc2.save();
