@@ -15,9 +15,15 @@ namespace L09_1_OldMacDonaldsFarm {
             this.sound = _sound; 
         }
         
-        eat(_food: string): void {
+        eat(_food: string, _amountFood: number): void {
             console.log("eat");
             // For- SChleife darin If-Bedinung checken, ob gleiche Bezeichnung
+            for (let index = 0; index < animals.length; index++) {
+
+                if(animals[index[2]] == stock [0])
+                console.log(stock [1] - [index[3]]);
+                
+            }
 
 
         }   
@@ -26,8 +32,12 @@ namespace L09_1_OldMacDonaldsFarm {
             console.log("draw");
         }
 
-        sing() {
+        sing(_sound: string): void {
             console.log("sing");
+            for (let index = 0; index < animals.length; index++) {
+                console.log(animals.index[4]);
+                
+            }
         }
     }
     
