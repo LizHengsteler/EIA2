@@ -11,6 +11,7 @@ var L09_Asteroids;
         L09_Asteroids.crc2 = canvas.getContext("2d");
         L09_Asteroids.crc2.fillStyle = "black";
         L09_Asteroids.crc2.strokeStyle = "white";
+        L09_Asteroids.crc2.fillRect(0, 0, L09_Asteroids.crc2.canvas.width, L09_Asteroids.crc2.canvas.height);
         L09_Asteroids.createPaths();
         console.log("Asteroids paths: ", L09_Asteroids.asteroidPaths);
         createAsteroids(5);
@@ -39,7 +40,7 @@ var L09_Asteroids;
     function breakAsteroid(_asteroid) {
         if (_asteroid.size > 0.3) {
             for (let i = 0; i < 2; i++) {
-                let fragment = new Asteroid(_asteroid.size / 2, _asteroid.position);
+                let fragment = new L09_Asteroids.Asteroid(_asteroid.size / 2, _asteroid.position);
                 fragment.velocity.add(_asteroid.velocity);
                 asteroids.push(fragment);
             }
@@ -50,7 +51,7 @@ var L09_Asteroids;
     function createAsteroids(_nAsteroids) {
         console.log("Create asteroids");
         for (let i = 0; i < _nAsteroids; i++) {
-            let asteroid = new Asteroid(1.0);
+            let asteroid = new L09_Asteroids.Asteroid(1.0);
             asteroids.push(asteroid);
         }
     }

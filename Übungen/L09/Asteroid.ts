@@ -1,30 +1,7 @@
 namespace L09_Asteroids {
     class Asteroid {
 
-    position: Vector;
-    velocity: Vector;
-    type: number;
-    size: number;
-
-    constructor (_size: number) {
-        console.log("Asteroid constructor");
-        this.position = new Vector (0, 0);
-        this.velocity = new Vector (0, 0);
-        this.velocity.random(100, 200);
-        this.type = Math.floor(Math.random() * 4);
-        this.size = _size;
-    }
-
-    moveBy(_timeslice: number): void {
-        console.log("Asteroid move");
-    }
-
-    draw(): void {
-        console.log("Asteroid draw");
-    }
-}
-
-    /*export class Asteroid {
+    export class Asteroid {
         position: Vector;
         velocity: Vector;
         type: number;
@@ -76,5 +53,5 @@ namespace L09_Asteroids {
             let difference: Vector = new Vector(_hotspot.x - this.position.x, _hotspot.y - this.position.y);
             return (Math.abs(difference.x) < hitsize && Math.abs(difference.y) < hitsize);
         }
-    }*/
+    }
 }
