@@ -9,14 +9,14 @@ var L09_1_OldMacDonaldsFarm;
         }
         substract(_substractionAmount) {
             console.log("substract");
-            this.amount = _substractionAmount - _amount;
+            this.amount = _substractionAmount - this.amount;
             this.showAmount();
         }
         showAmount() {
             console.log("showAmount");
-            let displayAmount = document.getElementById("amount");
+            let displayAmount = (document.getElementById("amount"));
             for (let index = 0; index < L09_1_OldMacDonaldsFarm.stock.length; index++) {
-                displayAmount.innerHTML = this.amount[index];
+                displayAmount.innerHTML = this.amount[L09_1_OldMacDonaldsFarm.stock[index]];
             }
         }
     }

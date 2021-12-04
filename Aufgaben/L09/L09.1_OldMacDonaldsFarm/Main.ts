@@ -4,7 +4,9 @@ namespace L09_1_OldMacDonaldsFarm {
   Matrikel: 268386
   Datum: 04.12.2021
   Zusammenarbeit: Theo Züffle, Kristoffer Müller und Hannah Sättele 
-  Quellen: Praktikum mit Markus, Inverted Classroom, W3Schools*/
+  Quellen: Praktikum mit Markus, Inverted Classroom, W3Schools
+  Youtube Video https://www.youtube.com/watch?v=OsFwOzr3_sE
+  */
   window.addEventListener("load", handleLoad);
 
   export let animals: Animal[] = [];
@@ -20,8 +22,11 @@ namespace L09_1_OldMacDonaldsFarm {
   let treat: Stock;
   let grass: Stock;
   let grains: Stock;
+  let output: HTMLDivElement = <HTMLDivElement>document.getElementById("output");
+  
 
   function handleLoad(_event: Event): void {
+
     console.log("handleLoad");
     cow = new Animal("cow", "Paula", "wheat", 10, "muuuh");
     chicken = new Animal("chicken", "Darcy", "seeds", 5, "gack");
@@ -37,18 +42,35 @@ namespace L09_1_OldMacDonaldsFarm {
     grains = new Stock("grains", 300);
     stock.push(wheat, seeds, treat, grass, grains);
 
+    //console.log(animals[1].output());
+
     simulateDay();
+    
+    
   }
 
   function simulateDay(): void {
-    cow.eat();
-    cow.sing();
-    console.log("simulateDay");
-    /*for (let index: number = 0; index < animals.length; index++) {
+    /*let displayOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("output");
+    displayOutput.innerHTML = animals[0].output();
+    displayOutput.innerHTML = animals[1].output();
+    displayOutput.innerHTML = animals[2].output();
+    displayOutput.innerHTML = animals[3].output();
+    displayOutput.innerHTML = animals[4].output();*/
 
-            animals[index].eat(_food, _amountFood);
-            animals[index].sing();
+    
+    for (let index: number = 0; index < animals.length; index++) {
+      console.log(animals[index].output());
+      let displayOutput: HTMLSpanElement = <HTMLSpanElement>document.createElement("span");
+    
+      displayOutput.innerHTML = animals[index].output();
+      console.log(displayOutput);
+      //output.cloneNode(true);
+      output.appendChild(displayOutput);
+
+  
+      //displayOutput.innerHTML = animals[index].output();
             
-        }*/
+        }
+        //hab die For-Schleife nicht so hinbekommen, dass sie alle positionen im Array anzeigt, sondern immer nur die letzte, deshalb hab ich alle einzeln aufgeschrieben*/
   }
 }
