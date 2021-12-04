@@ -23,7 +23,6 @@ namespace L09_1_OldMacDonaldsFarm {
   export let grass: Stock;
   export let grains: Stock;
   let output: HTMLDivElement;
-  
 
   function handleLoad(_event: Event): void {
     console.log("handleLoad");
@@ -40,14 +39,11 @@ namespace L09_1_OldMacDonaldsFarm {
     grass = new Stock("grass", 600);
     grains = new Stock("grains", 1000);
     stock.push(wheat, seeds, treat, grass, grains);
-    output = <HTMLDivElement>(
-      document.getElementById("output")
-    );
+    output = <HTMLDivElement>document.getElementById("output");
 
     console.log(animals[1].output());
 
     simulateDay();
-    
   }
 
   function simulateDay(): void {
@@ -56,7 +52,7 @@ namespace L09_1_OldMacDonaldsFarm {
         document.createElement("span")
       );
       displayOutput.innerHTML += animals[index].output();
-      //displayOutput.innerHTML += stock[index].showAmount();
+      displayOutput.innerHTML += stock[index].showAmount();
 
       output.appendChild(displayOutput);
     }

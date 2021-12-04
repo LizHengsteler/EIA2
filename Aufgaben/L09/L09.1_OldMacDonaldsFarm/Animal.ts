@@ -21,8 +21,6 @@ namespace L09_1_OldMacDonaldsFarm {
       this.sound = _sound;
     }
 
-    
-
     output(): string {
       return `<br>The ${this.type} named ${this.name} eats  ${this.amountFood} Kg of ${this.food} and sings "${this.sound}".<br>`;
     }

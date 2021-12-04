@@ -7,6 +7,10 @@ var L09_1_OldMacDonaldsFarm;
             this.type = _type;
             this.amount = _amount;
         }
+        showAmount() {
+            //this.amount = this.amount - _substractionAmount.amount;
+            return `<br>There is ${this.amount} left of ${this.type}.<br>`;
+        }
     }
     L09_1_OldMacDonaldsFarm.Stock = Stock;
 })(L09_1_OldMacDonaldsFarm || (L09_1_OldMacDonaldsFarm = {}));

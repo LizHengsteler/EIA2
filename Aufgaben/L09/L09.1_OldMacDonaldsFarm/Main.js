@@ -27,7 +27,7 @@ var L09_1_OldMacDonaldsFarm;
         L09_1_OldMacDonaldsFarm.grass = new L09_1_OldMacDonaldsFarm.Stock("grass", 600);
         L09_1_OldMacDonaldsFarm.grains = new L09_1_OldMacDonaldsFarm.Stock("grains", 1000);
         L09_1_OldMacDonaldsFarm.stock.push(L09_1_OldMacDonaldsFarm.wheat, L09_1_OldMacDonaldsFarm.seeds, L09_1_OldMacDonaldsFarm.treat, L09_1_OldMacDonaldsFarm.grass, L09_1_OldMacDonaldsFarm.grains);
-        output = (document.getElementById("output"));
+        output = document.getElementById("output");
         console.log(L09_1_OldMacDonaldsFarm.animals[1].output());
         simulateDay();
     }
@@ -35,7 +35,7 @@ var L09_1_OldMacDonaldsFarm;
         for (let index = 0; index < L09_1_OldMacDonaldsFarm.animals.length; index++) {
             let displayOutput = (document.createElement("span"));
             displayOutput.innerHTML += L09_1_OldMacDonaldsFarm.animals[index].output();
-            //displayOutput.innerHTML += stock[index].showAmount();
+            displayOutput.innerHTML += L09_1_OldMacDonaldsFarm.stock[index].showAmount();
             output.appendChild(displayOutput);
         }
     }
