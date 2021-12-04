@@ -21,33 +21,7 @@ namespace L09_1_OldMacDonaldsFarm {
       this.sound = _sound;
     }
 
-    eat(): string {
-      console.log("eat");
-      return `<br>The ${this.type} named ${this.name} eats  ${this.amountFood} Kg of ${this.food} and sings ${this.sound}.<br>`;
-      
-      // For- SChleife darin If-Bedinung checken, ob gleiche Bezeichnung
-      /*for (let index = 0; index < animals.length; index++) {
-        /*if(animals[index[2]] == stock [0])
-
-      }*/
-    }
-
-    /*draw(): void {
-            console.log("draw");
-        }*/
-
-    sing(_sound: string): void {
-      console.log("sing");
-      let displaySong: HTMLDivElement = <HTMLDivElement>(
-        document.getElementById("song")
-      );
-      //displaySong.innerHTML = this.sound;
-
-      for (let index: number = 0; index < animals.length; index++) {
-        displaySong.innerHTML = this.sound;
-
-      }
-    }
+    
 
     output(): string {
       return `<br>The ${this.type} named ${this.name} eats  ${this.amountFood} Kg of ${this.food} and sings "${this.sound}".<br>`;

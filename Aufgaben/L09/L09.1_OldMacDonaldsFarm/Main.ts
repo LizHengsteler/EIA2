@@ -11,20 +11,19 @@ namespace L09_1_OldMacDonaldsFarm {
 
   export let animals: Animal[] = [];
   export let stock: Stock[] = [];
-  let cow: Animal;
-  let chicken: Animal;
-  let dog: Animal;
-  let donkey: Animal;
-  let pig: Animal;
+  export let cow: Animal;
+  export let chicken: Animal;
+  export let dog: Animal;
+  export let donkey: Animal;
+  export let pig: Animal;
 
-  let wheat: Stock;
-  let seeds: Stock;
-  let treat: Stock;
-  let grass: Stock;
-  let grains: Stock;
-  let output: HTMLDivElement = <HTMLDivElement>(
-    document.getElementById("output")
-  );
+  export let wheat: Stock;
+  export let seeds: Stock;
+  export let treat: Stock;
+  export let grass: Stock;
+  export let grains: Stock;
+  let output: HTMLDivElement;
+  
 
   function handleLoad(_event: Event): void {
     console.log("handleLoad");
@@ -35,12 +34,15 @@ namespace L09_1_OldMacDonaldsFarm {
     pig = new Animal("pig", "Peppa", "grains", 20, "oink");
     animals.push(cow, chicken, dog, donkey, pig);
 
-    wheat = new Stock("wheat", 300);
-    seeds = new Stock("seeds", 300);
-    treat = new Stock("treat", 300);
-    grass = new Stock("grass", 300);
-    grains = new Stock("grains", 300);
+    wheat = new Stock("wheat", 400);
+    seeds = new Stock("seeds", 350);
+    treat = new Stock("treat", 40);
+    grass = new Stock("grass", 600);
+    grains = new Stock("grains", 1000);
     stock.push(wheat, seeds, treat, grass, grains);
+    output = <HTMLDivElement>(
+      document.getElementById("output")
+    );
 
     console.log(animals[1].output());
 
@@ -55,6 +57,7 @@ namespace L09_1_OldMacDonaldsFarm {
         document.createElement("span")
       );
       displayOutput.innerHTML += animals[index].output();
+      displayOutput.innerHTML += stock[index].showAmount();
 
       output.appendChild(displayOutput);
     }

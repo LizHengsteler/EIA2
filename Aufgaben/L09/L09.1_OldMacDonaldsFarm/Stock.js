@@ -7,13 +7,10 @@ var L09_1_OldMacDonaldsFarm;
             this.type = _type;
             this.amount = _amount;
         }
-        substract(_substractionAmount) {
-            console.log("substract");
-            this.amount = _substractionAmount - this.amount;
-            this.showAmount();
-        }
         showAmount() {
-            return `<br>The ${this.type} named ${this.name} eats  ${this.amountFood} Kg of ${this.food} and sings "${this.sound}".<br>`;
+            let subAmount = this.amount - _amountFood;
+            //this.amount = this.amount - _substractionAmount.amount;
+            return `<br>There is ${subAmount} left of ${this.type}.<br>`;
         }
     }
     L09_1_OldMacDonaldsFarm.Stock = Stock;
