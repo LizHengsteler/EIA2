@@ -15,15 +15,11 @@ namespace L09_1_OldMacDonaldsFarm {
       this.showAmount();
     }
 
-    showAmount(): void {
-      console.log("showAmount");
-      let displayAmount: HTMLDivElement = <HTMLDivElement>(
-        document.getElementById("amount")
-      );
+    showAmount(): string {
+      return `<br>The ${this.type} named ${this.name} eats  ${this.amountFood} Kg of ${this.food} and sings "${this.sound}".<br>`;
+      
 
-      for (let index: number = 0; index < stock.length; index++) {
-        displayAmount.innerHTML = this.amount[stock[index]];
-      }
+      
     }
   }
 }
