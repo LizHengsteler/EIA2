@@ -17,7 +17,7 @@ var L09_1_OldMacDonaldsFarm;
         console.log("handleLoad");
         L09_1_OldMacDonaldsFarm.cow = new L09_1_OldMacDonaldsFarm.Animal("cow", "Paula", "wheat", 10, "muuuh");
         L09_1_OldMacDonaldsFarm.chicken = new L09_1_OldMacDonaldsFarm.Animal("chicken", "Darcy", "seeds", 5, "gack");
-        L09_1_OldMacDonaldsFarm.dog = new L09_1_OldMacDonaldsFarm.Animal("dog", "Peanut", "treat", 3, "woof");
+        L09_1_OldMacDonaldsFarm.dog = new L09_1_OldMacDonaldsFarm.Animal("dog", "Peanut", "treats", 1, "woof");
         L09_1_OldMacDonaldsFarm.donkey = new L09_1_OldMacDonaldsFarm.Animal("donkey", "Elisabeth", "grass", 50, "iaia");
         L09_1_OldMacDonaldsFarm.pig = new L09_1_OldMacDonaldsFarm.Animal("pig", "Peppa", "grains", 20, "oink");
         L09_1_OldMacDonaldsFarm.animals.push(L09_1_OldMacDonaldsFarm.cow, L09_1_OldMacDonaldsFarm.chicken, L09_1_OldMacDonaldsFarm.dog, L09_1_OldMacDonaldsFarm.donkey, L09_1_OldMacDonaldsFarm.pig);
@@ -30,14 +30,12 @@ var L09_1_OldMacDonaldsFarm;
         output = (document.getElementById("output"));
         console.log(L09_1_OldMacDonaldsFarm.animals[1].output());
         simulateDay();
-        console.log(L09_1_OldMacDonaldsFarm.animals);
-        console.log(L09_1_OldMacDonaldsFarm.stock);
     }
     function simulateDay() {
         for (let index = 0; index < L09_1_OldMacDonaldsFarm.animals.length; index++) {
             let displayOutput = (document.createElement("span"));
             displayOutput.innerHTML += L09_1_OldMacDonaldsFarm.animals[index].output();
-            displayOutput.innerHTML += L09_1_OldMacDonaldsFarm.stock[index].showAmount();
+            //displayOutput.innerHTML += stock[index].showAmount();
             output.appendChild(displayOutput);
         }
     }

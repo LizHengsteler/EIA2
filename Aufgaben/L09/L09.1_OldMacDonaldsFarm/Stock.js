@@ -7,11 +7,6 @@ var L09_1_OldMacDonaldsFarm;
             this.type = _type;
             this.amount = _amount;
         }
-        showAmount() {
-            let subAmount = this.amount - _amountFood;
-            //this.amount = this.amount - _substractionAmount.amount;
-            return `<br>There is ${subAmount} left of ${this.type}.<br>`;
-        }
     }
     L09_1_OldMacDonaldsFarm.Stock = Stock;
 })(L09_1_OldMacDonaldsFarm || (L09_1_OldMacDonaldsFarm = {}));

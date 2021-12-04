@@ -11,7 +11,7 @@ namespace L09_1_OldMacDonaldsFarm {
 
    
 
-    showAmount(): string {
+    /*showAmount(): string {
       let subAmount: number = this.amount - _amountFood;
       //this.amount = this.amount - _substractionAmount.amount;
       return `<br>There is ${subAmount} left of ${this.type}.<br>`;
@@ -19,6 +19,6 @@ namespace L09_1_OldMacDonaldsFarm {
       
 
       
-    }
+    }*/
   }
 }

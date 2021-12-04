@@ -29,7 +29,7 @@ namespace L09_1_OldMacDonaldsFarm {
     console.log("handleLoad");
     cow = new Animal("cow", "Paula", "wheat", 10, "muuuh");
     chicken = new Animal("chicken", "Darcy", "seeds", 5, "gack");
-    dog = new Animal("dog", "Peanut", "treat", 3, "woof");
+    dog = new Animal("dog", "Peanut", "treats", 1, "woof");
     donkey = new Animal("donkey", "Elisabeth", "grass", 50, "iaia");
     pig = new Animal("pig", "Peppa", "grains", 20, "oink");
     animals.push(cow, chicken, dog, donkey, pig);
@@ -47,8 +47,7 @@ namespace L09_1_OldMacDonaldsFarm {
     console.log(animals[1].output());
 
     simulateDay();
-    console.log(animals);
-    console.log(stock);
+    
   }
 
   function simulateDay(): void {
@@ -57,7 +56,7 @@ namespace L09_1_OldMacDonaldsFarm {
         document.createElement("span")
       );
       displayOutput.innerHTML += animals[index].output();
-      displayOutput.innerHTML += stock[index].showAmount();
+      //displayOutput.innerHTML += stock[index].showAmount();
 
       output.appendChild(displayOutput);
     }
