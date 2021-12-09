@@ -34,7 +34,7 @@ var L09_1_OldMacDonaldsFarm;
     function simulateDay() {
         for (let index = 0; index < L09_1_OldMacDonaldsFarm.animals.length; index++) {
             let displayOutput = (document.createElement("span"));
-            displayOutput.innerHTML += L09_1_OldMacDonaldsFarm.animals[index].output();
+            displayOutput.innerHTML += L09_1_OldMacDonaldsFarm.animals[index].output(); // wie greif ich auf zb muuuh zu
             displayOutput.innerHTML += L09_1_OldMacDonaldsFarm.stock[index].showAmount();
             output.appendChild(displayOutput);
         }

@@ -51,7 +51,7 @@ namespace L09_1_OldMacDonaldsFarm {
       let displayOutput: HTMLSpanElement = <HTMLSpanElement>(
         document.createElement("span")
       );
-      displayOutput.innerHTML += animals[index].output();
+      displayOutput.innerHTML += animals[index].output();// wie greif ich auf zb muuuh zu
       displayOutput.innerHTML += stock[index].showAmount();
 
       output.appendChild(displayOutput);

@@ -2,8 +2,6 @@
 var L09_Asteroids;
 (function (L09_Asteroids) {
     class Asteroid {
-    }
-    class Asteroid {
         constructor(_size, _position) {
             console.log("Asteroid constructor");
             if (_position)

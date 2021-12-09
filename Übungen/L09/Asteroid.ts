@@ -1,5 +1,4 @@
 namespace L09_Asteroids {
-    class Asteroid {
 
     export class Asteroid {
         position: Vector;
@@ -54,4 +53,3 @@ namespace L09_Asteroids {
             return (Math.abs(difference.x) < hitsize && Math.abs(difference.y) < hitsize);
         }
     }
-}
