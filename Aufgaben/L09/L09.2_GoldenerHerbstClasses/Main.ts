@@ -3,7 +3,7 @@ namespace L09_2_GoldenerHerbst {
 
   window.addEventListener("load", handleLoad);
 
-  let leaves: Leave[] = [];
+  let leaves: Leaf[] = [];
   let clouds: Cloud[] = [];
   let squirrels: Squirrel[] = [];
 

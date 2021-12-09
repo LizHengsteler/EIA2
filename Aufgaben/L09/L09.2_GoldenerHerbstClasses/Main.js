@@ -147,7 +147,7 @@ var L09_2_GoldenerHerbst;
         let x = Math.round(Math.random());
         let y = Math.round(Math.random());
         for (let i = 0; i < _nLeaves; i++) {
-            let leave1 = new L09_2_GoldenerHerbst.Leave(1, 2.2, 2, 3);
+            let leave1 = new Leave(1, 2.2, 2, 3);
             leaves.push(leave1);
         }
         for (let drawn = 0; drawn < nLeaves; drawn++) {

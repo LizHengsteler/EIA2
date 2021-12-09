@@ -1,5 +1,5 @@
 namespace L09_2_GoldenerHerbst {
-  export class Leave {
+  export class Leaf {
     position: Vector;
     velocity: Vector;
     size: number;

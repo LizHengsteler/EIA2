@@ -1,7 +1,7 @@
 "use strict";
 var L09_2_GoldenerHerbst;
 (function (L09_2_GoldenerHerbst) {
-    class Leave {
+    class Leaf {
         constructor(_position, _velocity, _size, _type) {
             if (_position)
                 this.position = _position;
@@ -60,6 +60,6 @@ var L09_2_GoldenerHerbst;
             L09_2_GoldenerHerbst.crc2.restore();
         }
     }
-    L09_2_GoldenerHerbst.Leave = Leave;
+    L09_2_GoldenerHerbst.Leaf = Leaf;
 })(L09_2_GoldenerHerbst || (L09_2_GoldenerHerbst = {}));
-//# sourceMappingURL=Leave.js.map
+//# sourceMappingURL=Leaf.js.map
