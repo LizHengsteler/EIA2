@@ -3,13 +3,13 @@ namespace L09_2_GoldenerHerbst {
     position: Vector;
     velocity: Vector;
     size: number;
-    type: number;
+    //type: number;
 
     constructor(
       _position: Vector,
       _velocity: Vector,
-      _size: number,
-      _type: number
+      _size: number
+      //_type: number
     ) {
       if (_position) this.position = _position;
       else this.position = new Vector(0, 0);
@@ -19,7 +19,7 @@ namespace L09_2_GoldenerHerbst {
       this.position = _position;
       this.velocity = _velocity;
       this.size = _size;
-      this.type = _type;
+      //this.type = _type;
     }
 
     move(_timeslice: number): void {

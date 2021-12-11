@@ -1,6 +1,14 @@
 "use strict";
 var L09_2_GoldenerHerbst;
 (function (L09_2_GoldenerHerbst) {
+    /*Aufgabe: L09.2 Goldener Herbst
+    Name: Liz Hengsteler
+    Matrikel: 268386
+    Datum: 11.12.2021
+    Zusammenarbeit: Hannah Sättele
+    Quellen: Praktikum mit Alida, Inverted Classroom, Jirka Videos + Code
+    
+    */
     let canvas = document.querySelector("canvas");
     window.addEventListener("load", handleLoad);
     let leaves = [];
@@ -20,9 +28,10 @@ var L09_2_GoldenerHerbst;
         L09_2_GoldenerHerbst.horizon = L09_2_GoldenerHerbst.crc2.canvas.height * L09_2_GoldenerHerbst.golden;
         drawBackground();
         //drawCloud({ x: 500, y: 125 }, { x: 250, y: 75 });
-        drawFirs();
         //drawSquirrels();
+        createClouds(15);
         createLeaves(13);
+        window.setInterval(update, 20);
     }
     function drawBackground() {
         //console.log("background");
@@ -37,8 +46,7 @@ var L09_2_GoldenerHerbst;
         L09_2_GoldenerHerbst.crc2.restore();
         drawSun({ x: 100, y: 75 });
         drawMountains({ x: 0, y: L09_2_GoldenerHerbst.horizon }, 75, 200, "grey", "white");
-        createClouds(15);
-        animate();
+        drawFirs();
     }
     function drawSun(_position) {
         //console.log("sun", _position);
@@ -121,41 +129,25 @@ var L09_2_GoldenerHerbst;
         L09_2_GoldenerHerbst.crc2.restore();
     }
     function createClouds(_nClouds) {
-        //console.log("cloud", _position, _size);
-        //let nParticles: number = 30;
         for (let index = 0; index < _nClouds; index++) {
-            let cloud = new L09_2_GoldenerHerbst.Cloud();
+            let cloud = new L09_2_GoldenerHerbst.Cloud(new L09_2_GoldenerHerbst.Vector(Math.random() * 200, Math.random() * 200), new L09_2_GoldenerHerbst.Vector(Math.random() * 200, Math.random() * 400));
             clouds.push(cloud);
         }
+    }
+    function createLeaves(_nLeaves) {
+        for (let i = 0; i < _nLeaves; i++) {
+            let leaf1 = new L09_2_GoldenerHerbst.Leaf(new L09_2_GoldenerHerbst.Vector(Math.random() * 200, Math.random() * 200), new L09_2_GoldenerHerbst.Vector(Math.random() * 200, Math.random() * 400), 2);
+            leaves.push(leaf1);
+        }
+    }
+    function update() {
         for (let cloud of clouds) {
             cloud.draw();
             cloud.move();
         }
-    }
-    /*for (let drawn: number = 0; drawn < nParticles; drawn++) {
-        crc2.save();
-        let x: number = (Math.random() - 0.5) * _size.x;
-        let y: number = -(Math.random() * _size.y);
-        crc2.translate(x, y);
-        crc2.fill(particle);
-        crc2.restore();
-      }
-      crc2.restore();*/
-    function createLeaves(_nLeaves) {
-        let nLeaves = 15;
-        let x = Math.round(Math.random());
-        let y = Math.round(Math.random());
-        for (let i = 0; i < _nLeaves; i++) {
-            let leave1 = new Leave(1, 2.2, 2, 3);
-            leaves.push(leave1);
-        }
-        for (let drawn = 0; drawn < nLeaves; drawn++) {
-            L09_2_GoldenerHerbst.crc2.save();
-            x += x + Math.round(Math.random());
-            y += y + Math.round(Math.random());
-            L09_2_GoldenerHerbst.crc2.translate(x, y);
-            L09_2_GoldenerHerbst.crc2.rotate(x);
-            L09_2_GoldenerHerbst.crc2.restore();
+        for (let leaf1 of leaves) {
+            leaf1.draw();
+            leaf1.move(0.1);
         }
     }
     /*function drawSquirrels(): void {

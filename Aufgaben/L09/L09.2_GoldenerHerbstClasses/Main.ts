@@ -1,4 +1,12 @@
 namespace L09_2_GoldenerHerbst {
+  /*Aufgabe: L09.2 Goldener Herbst
+  Name: Liz Hengsteler
+  Matrikel: 268386
+  Datum: 11.12.2021
+  Zusammenarbeit: Hannah Sättele 
+  Quellen: Praktikum mit Alida, Inverted Classroom, Jirka Videos + Code
+  
+  */
   let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
 
   window.addEventListener("load", handleLoad);
@@ -22,15 +30,14 @@ namespace L09_2_GoldenerHerbst {
     crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
     horizon = crc2.canvas.height * golden;
-    
 
     drawBackground();
     //drawCloud({ x: 500, y: 125 }, { x: 250, y: 75 });
 
-    
-    drawFirs();
     //drawSquirrels();
+    createClouds(15);
     createLeaves(13);
+    window.setInterval(update, 20);
   }
 
   function drawBackground(): void {
@@ -53,9 +60,7 @@ namespace L09_2_GoldenerHerbst {
 
     drawSun({ x: 100, y: 75 });
     drawMountains({ x: 0, y: horizon }, 75, 200, "grey", "white");
-    createClouds(15);
-    animate();
-   
+    drawFirs();
   }
 
   function drawSun(_position: Vector): void {
@@ -167,57 +172,37 @@ namespace L09_2_GoldenerHerbst {
   }
 
   function createClouds(_nClouds: number): void {
-    //console.log("cloud", _position, _size);
-    //let nParticles: number = 30;
     for (let index: number = 0; index < _nClouds; index++) {
-      let cloud: Cloud = new Cloud();
+      let cloud: Cloud = new Cloud(
+        new Vector(Math.random() * 200, Math.random() * 200),
+        new Vector(Math.random() * 200, Math.random() * 400)
+      );
+
       clouds.push(cloud);
     }
-
-    for (let cloud of clouds) {
-        
-        cloud.draw();
-        cloud.move();
-    }
   }
-
-  
-
-  /*for (let drawn: number = 0; drawn < nParticles; drawn++) {
-      crc2.save();
-      let x: number = (Math.random() - 0.5) * _size.x;
-      let y: number = -(Math.random() * _size.y);
-      crc2.translate(x, y);
-      crc2.fill(particle);
-      crc2.restore();
-    }
-    crc2.restore();*/
-
-  
 
   function createLeaves(_nLeaves: number): void {
-
-    let nLeaves: number = 15;
-    let x: number = Math.round(Math.random());
-    let y: number = Math.round(Math.random());
-
     for (let i: number = 0; i < _nLeaves; i++) {
-        let leave1: Leave = new Leave(1, 2.2, 2, 3);
-        leaves.push(leave1);
-    }
-
-    for (let drawn: number = 0; drawn < nLeaves; drawn++) {
-      crc2.save();
-      x += x + Math.round(Math.random());
-      y += y + Math.round(Math.random());
-      crc2.translate(x, y);
-      crc2.rotate(x);
-      
-      crc2.restore();
+      let leaf1: Leaf = new Leaf(
+        new Vector(Math.random() * 200, Math.random() * 200),
+        new Vector(Math.random() * 200, Math.random() * 400),
+        2
+      );
+      leaves.push(leaf1);
     }
   }
 
- 
+  function update(): void {
+    for (let cloud of clouds) {
+      cloud.draw();
+      cloud.move();
+    }
+    for (let leaf1 of leaves) {
+      leaf1.draw();
+      leaf1.move(0.1);
+    }
+  }
 
   /*function drawSquirrels(): void {
     console.log("squirrel");

@@ -2,7 +2,10 @@
 var L09_2_GoldenerHerbst;
 (function (L09_2_GoldenerHerbst) {
     class Leaf {
-        constructor(_position, _velocity, _size, _type) {
+        //type: number;
+        constructor(_position, _velocity, _size
+        //_type: number
+        ) {
             if (_position)
                 this.position = _position;
             else
@@ -12,7 +15,7 @@ var L09_2_GoldenerHerbst;
             this.position = _position;
             this.velocity = _velocity;
             this.size = _size;
-            this.type = _type;
+            //this.type = _type;
         }
         move(_timeslice) {
             console.log("move");

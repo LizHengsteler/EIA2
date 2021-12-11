@@ -2,7 +2,7 @@ namespace L09_2_GoldenerHerbst {
   export class Cloud {
     position: Vector;
     velocity: Vector;
-    number: number;
+    //number: number;
     size: number;
 
     constructor(_position: Vector, _velocity: Vector) {
@@ -10,17 +10,31 @@ namespace L09_2_GoldenerHerbst {
       if (_position)
       this.position = _position;
       else
-      this.position = new Vector((Math.random() * crc2.canvas.width), 100);
+      this.position = new Vector(300, 100);
 
-      this.velocity = new Vector(10, 0);
+      this.velocity = new Vector(0, 0);
+      this.velocity.random(100, 200);
 
 
-      this.number = Math.floor(Math.random() * 4);
+      //this.number = Math.floor(Math.random() * 4);
       this.size = Math.random() * 3;
       //this.position = _position;
       //this.velocity = _velocity;
       //this.number = _number;
     }
+    move(): void {
+      this.position.add(this.velocity);
+
+      if (this.position.x < 0)
+              this.position.x += crc2.canvas.width;
+      //if (this.position.y < 0)
+              //this.position.y += crc2.canvas.height;
+      if (this.position.x > crc2.canvas.width)
+              this.position.x -= crc2.canvas.width;
+      //if (this.position.y > crc2.canvas.height)
+        //      this.position.y -= crc2.canvas.height;
+  }
+
 
     draw(): void {
       let nParticles: number = 30;
@@ -55,17 +69,6 @@ namespace L09_2_GoldenerHerbst {
       crc2.restore();
     }
 
-    move(): void {
-        this.position.add(this.velocity);
-
-        if (this.position.x < 0)
-                this.position.x += crc2.canvas.width;
-        if (this.position.y < 0)
-                this.position.y += crc2.canvas.height;
-        if (this.position.x > crc2.canvas.width)
-                this.position.x -= crc2.canvas.width;
-        if (this.position.y > crc2.canvas.height)
-                this.position.y -= crc2.canvas.height;
-    }
-  }
+    
+}
 }
