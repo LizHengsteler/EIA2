@@ -53,7 +53,8 @@ namespace L09_2_GoldenerHerbst {
 
     drawSun({ x: 100, y: 75 });
     drawMountains({ x: 0, y: horizon }, 75, 200, "grey", "white");
-    //createClouds();
+    createClouds(15);
+    animate();
    
   }
 
@@ -165,7 +166,7 @@ namespace L09_2_GoldenerHerbst {
     crc2.restore();
   }
 
-  /*function createClouds(_nClouds: number): void {
+  function createClouds(_nClouds: number): void {
     //console.log("cloud", _position, _size);
     //let nParticles: number = 30;
     for (let index: number = 0; index < _nClouds; index++) {
@@ -176,9 +177,11 @@ namespace L09_2_GoldenerHerbst {
     for (let cloud of clouds) {
         
         cloud.draw();
-        //cloud.move(1 / 50);
+        cloud.move();
     }
-  }*/
+  }
+
+  
 
   /*for (let drawn: number = 0; drawn < nParticles; drawn++) {
       crc2.save();

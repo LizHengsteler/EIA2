@@ -37,7 +37,8 @@ var L09_2_GoldenerHerbst;
         L09_2_GoldenerHerbst.crc2.restore();
         drawSun({ x: 100, y: 75 });
         drawMountains({ x: 0, y: L09_2_GoldenerHerbst.horizon }, 75, 200, "grey", "white");
-        //createClouds();
+        createClouds(15);
+        animate();
     }
     function drawSun(_position) {
         //console.log("sun", _position);
@@ -119,20 +120,18 @@ var L09_2_GoldenerHerbst;
         L09_2_GoldenerHerbst.crc2.fill();
         L09_2_GoldenerHerbst.crc2.restore();
     }
-    /*function createClouds(_nClouds: number): void {
-      //console.log("cloud", _position, _size);
-      //let nParticles: number = 30;
-      for (let index: number = 0; index < _nClouds; index++) {
-        let cloud: Cloud = new Cloud();
-        clouds.push(cloud);
-      }
-  
-      for (let cloud of clouds) {
-          
-          cloud.draw();
-          //cloud.move(1 / 50);
-      }
-    }*/
+    function createClouds(_nClouds) {
+        //console.log("cloud", _position, _size);
+        //let nParticles: number = 30;
+        for (let index = 0; index < _nClouds; index++) {
+            let cloud = new L09_2_GoldenerHerbst.Cloud();
+            clouds.push(cloud);
+        }
+        for (let cloud of clouds) {
+            cloud.draw();
+            cloud.move();
+        }
+    }
     /*for (let drawn: number = 0; drawn < nParticles; drawn++) {
         crc2.save();
         let x: number = (Math.random() - 0.5) * _size.x;

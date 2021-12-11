@@ -3,8 +3,15 @@ var L09_2_GoldenerHerbst;
 (function (L09_2_GoldenerHerbst) {
     class Cloud {
         constructor(_position, _velocity) {
-            this.position = _position;
-            this.velocity = _velocity;
+            if (_position)
+                this.position = _position;
+            else
+                this.position = new L09_2_GoldenerHerbst.Vector((Math.random() * L09_2_GoldenerHerbst.crc2.canvas.width), 100);
+            this.velocity = new L09_2_GoldenerHerbst.Vector(10, 0);
+            this.number = Math.floor(Math.random() * 4);
+            this.size = Math.random() * 3;
+            //this.position = _position;
+            //this.velocity = _velocity;
             //this.number = _number;
         }
         draw() {
@@ -16,17 +23,28 @@ var L09_2_GoldenerHerbst;
             gradient.addColorStop(0, "hsl(195, 76%, 91%)");
             gradient.addColorStop(1, "hsl(353, 76%, 91%)");
             L09_2_GoldenerHerbst.crc2.save();
-            //crc2.translate(_position.x, _position.y);
+            L09_2_GoldenerHerbst.crc2.translate(this.position.x, this.position.y);
             L09_2_GoldenerHerbst.crc2.fillStyle = gradient;
             for (let drawn = 0; drawn < nParticles; drawn++) {
                 L09_2_GoldenerHerbst.crc2.save();
-                //let x: number = (Math.random() - 0.5) * _size.x;
-                //let y: number = -(Math.random() * _size.y);
-                L09_2_GoldenerHerbst.crc2.translate(L09_2_GoldenerHerbst.x, L09_2_GoldenerHerbst.y);
+                let x = (Math.random() - 0.5) * this.size;
+                let y = -(Math.random() * this.size);
+                L09_2_GoldenerHerbst.crc2.translate(x, y);
                 L09_2_GoldenerHerbst.crc2.fill(particle);
                 L09_2_GoldenerHerbst.crc2.restore();
             }
             L09_2_GoldenerHerbst.crc2.restore();
+        }
+        move() {
+            this.position.add(this.velocity);
+            if (this.position.x < 0)
+                this.position.x += L09_2_GoldenerHerbst.crc2.canvas.width;
+            if (this.position.y < 0)
+                this.position.y += L09_2_GoldenerHerbst.crc2.canvas.height;
+            if (this.position.x > L09_2_GoldenerHerbst.crc2.canvas.width)
+                this.position.x -= L09_2_GoldenerHerbst.crc2.canvas.width;
+            if (this.position.y > L09_2_GoldenerHerbst.crc2.canvas.height)
+                this.position.y -= L09_2_GoldenerHerbst.crc2.canvas.height;
         }
     }
     L09_2_GoldenerHerbst.Cloud = Cloud;
