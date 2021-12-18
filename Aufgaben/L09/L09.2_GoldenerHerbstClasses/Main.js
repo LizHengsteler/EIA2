@@ -7,7 +7,21 @@ var L09_2_GoldenerHerbst;
     Datum: 11.12.2021
     Zusammenarbeit: Hannah Sättele
     Quellen: Praktikum mit Alida, Inverted Classroom, Jirka Videos + Code
-    
+    Das Konzept sieht gut aus, während der Betrachtung tun sich mir aber paar Fragen auf: optionaler Parameter mit "?"
+    warum sollen erst die Parameterwerte bei den Constructors benutzt werden, wenn direkt
+    darauf andere Werte zugeschrieben werden (this.position = _position -> position to 0, 0)?
+     Gibt es bei Leaf.draw je nach type unterschiede in allen Aktionen – würde nur im path vermuten?
+      Dann reicht es den Entscheidungsknoten darum zu positionieren. Im AD gehört der Block mit den
+      angelegten Variablen vor oder nach "install load listener", sonst würde er nicht ausgeführt werden.
+      In der Umsetzung scheint die erste Frage beantwortet zu werden: _position sollte ein optionaler Parameter
+      sein und ggf. beschrieben werden; da es aber aktuell ein notwendiger Parameter ist macht die Abfrage
+       vermutlich noch nichts. Weil die draw-Methode von Leaf die eigene Position nicht berücksichtig
+        werden alle Blätter übereinander gemalt und können sich nicht bewegen. Der Canvas wird mit surrealen
+        Wolkenpartikeln gefüllt, bis sie nach oben oder unten unaufgehalten verschwinden, weil das gesamte Bild
+        erhalten bleibt und sich weitere Änderungen drüber malen – das Hintergrundbild zu speichern wenn es fertig
+         ist und bei jedem Update als Basis zu verwenden würde das lösen. Schön zu sehen, dass die Tannen zum letzten
+          mal weiter auseinander stehen (MD)
+  
     */
     let canvas = document.querySelector("canvas");
     window.addEventListener("load", handleLoad);
@@ -147,8 +161,9 @@ var L09_2_GoldenerHerbst;
         }
         for (let leaf1 of leaves) {
             leaf1.draw();
-            leaf1.move(0.1);
+            leaf1.move();
         }
+        window.requestAnimationFrame(createLeaves);
     }
     /*function drawSquirrels(): void {
       console.log("squirrel");

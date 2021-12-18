@@ -1,11 +1,11 @@
-namespace L09_1_OldMacDonaldsFarm {
+  namespace L10_1_OldMacDonaldsFarm {
   /*Aufgabe: L09.1 OldMacDonaldsFarm
   Name: Liz Hengsteler
   Matrikel: 268386
   Datum: 04.12.2021
-  Zusammenarbeit: Theo Züffle, Kristoffer Müller und Hannah Sättele 
-  Quellen: Praktikum mit Markus, Inverted Classroom, W3Schools
-  Youtube Video https://www.youtube.com/watch?v=OsFwOzr3_sE
+  Zusammenarbeit: Hannah Sättele (Konzeptdurchsprache)
+  Quellen: Praktikum mit Markus, Inverted Classroom, 
+  
   */
   window.addEventListener("load", handleLoad);
 
@@ -26,11 +26,13 @@ namespace L09_1_OldMacDonaldsFarm {
 
   function handleLoad(_event: Event): void {
     console.log("handleLoad");
-    cow = new Animal("cow", "Paula", "wheat", 10, "muuuh");
-    chicken = new Animal("chicken", "Darcy", "seeds", 5, "gack");
-    dog = new Animal("dog", "Peanut", "treats", 1, "woof");
-    donkey = new Animal("donkey", "Elisabeth", "grass", 50, "iaia");
-    pig = new Animal("pig", "Peppa", "grains", 20, "oink");
+    cow =  new Cow ();
+    chicken = new Chicken ();
+    dog = new Dog ();
+    donkey = new Donkey ();
+    pig = new Pig ();
+    
+
     animals.push(cow, chicken, dog, donkey, pig);
 
     wheat = new Stock("wheat", 400);
@@ -51,10 +53,11 @@ namespace L09_1_OldMacDonaldsFarm {
       let displayOutput: HTMLSpanElement = <HTMLSpanElement>(
         document.createElement("span")
       );
-      displayOutput.innerHTML += animals[index].output(); // wie greif ich auf zb muuuh zu
+      displayOutput.innerHTML += animals[index].output();// wie greif ich auf zb muuuh zu
       displayOutput.innerHTML += stock[index].showAmount();
 
       output.appendChild(displayOutput);
     }
   }
+
 }

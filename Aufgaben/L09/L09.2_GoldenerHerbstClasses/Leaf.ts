@@ -22,10 +22,10 @@ namespace L09_2_GoldenerHerbst {
       //this.type = _type;
     }
 
-    move(_timeslice: number): void {
+    move(): void {
       console.log("move");
       let offset: Vector = new Vector(this.velocity.x, this.velocity.y);
-      offset.scale(_timeslice);
+      //offset.scale(_timeslice);
       this.position.add(offset);
 
       if (this.position.x < 0)
