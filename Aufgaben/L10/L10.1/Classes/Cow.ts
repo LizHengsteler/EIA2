@@ -7,7 +7,7 @@ namespace L10_1_OldMacDonaldsFarm {
 
         doSpecialAction(): void {
             
-        let nameDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("name"); //zugrief auf id
+        let nameDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("name"); //zugriff auf id
         nameDiv.innerHTML += this.specialTalent;
 
         }

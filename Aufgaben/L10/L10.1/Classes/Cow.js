@@ -6,7 +6,7 @@ var L10_1_OldMacDonaldsFarm;
             super("Paula", "wheat", 10, "muuuuh", "shows her tongue because its purple");
         }
         doSpecialAction() {
-            let nameDiv = document.getElementById("name"); //zugrief auf id
+            let nameDiv = document.getElementById("name"); //zugriff auf id
             nameDiv.innerHTML += this.specialTalent;
         }
     }

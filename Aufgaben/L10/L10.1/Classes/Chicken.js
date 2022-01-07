@@ -6,7 +6,7 @@ var L10_1_OldMacDonaldsFarm;
             super("Darcy", "seeds", 10, "kickeriki", "flys high");
         }
         doSpecialAction() {
-            let nameDiv = document.getElementById("name"); //zugrief auf id
+            let nameDiv = document.getElementById("name"); //zugriff auf id
             nameDiv.innerHTML += this.specialTalent;
         }
         output() {
