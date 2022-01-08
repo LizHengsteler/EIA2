@@ -6,7 +6,7 @@ var L10_2_GoldenerHerbst;
     Matrikel: 268386
     Datum: 08.01.2022
     Zusammenarbeit:
-    Quellen: Praktikum mit Alida, Inverted Classroom, Jirka Videos + Code
+    Quellen: Inverted Classroom, Jirka Videos + Code
    
   
     */
