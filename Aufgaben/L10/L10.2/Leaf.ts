@@ -2,15 +2,14 @@ namespace L10_2_GoldenerHerbst {
     export class Leaf extends Moveable {
       position: Vector;
       velocity: Vector;
-      size: number;
-      //type: number;
+      
   
       constructor(
+        
         _position: Vector,
-        _velocity: Vector,
-        _size: number
-        //_type: number
+        _velocity: Vector
       ) {
+        super();
         if (_position) this.position = _position;
         else this.position = new Vector(0, 0);
         this.velocity = new Vector(0, 0);
@@ -18,26 +17,10 @@ namespace L10_2_GoldenerHerbst {
   
         this.position = _position;
         this.velocity = _velocity;
-        this.size = _size;
-        //this.type = _type;
+        
       }
   
-      move(): void {
-        console.log("move");
-        let offset: Vector = new Vector(this.velocity.x, this.velocity.y);
-        //offset.scale(_timeslice);
-        this.position.add(offset);
-  
-        if (this.position.x < 0)
-            this.position.x += crc2.canvas.width;
-        if (this.position.y < 0)
-            this.position.y += crc2.canvas.height;
-        if (this.position.x > crc2.canvas.width)
-            this.position.x -= crc2.canvas.width;
-        if (this.position.y > crc2.canvas.height)
-            this.position.y -= crc2.canvas.height;
-    }
-  
+      
       draw(): void {
         console.log("leaves");
         crc2.save();

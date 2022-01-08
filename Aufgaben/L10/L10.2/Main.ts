@@ -17,6 +17,7 @@ namespace L10_2_GoldenerHerbst {
     let squirrels: Squirrel[] = [];
   
     export let crc2: CanvasRenderingContext2D;
+    export let background: ImageData;
     export let golden: number = 0.62;
     export let horizon: number;
     export let x: number = 0;
@@ -123,6 +124,7 @@ namespace L10_2_GoldenerHerbst {
       crc2.fillStyle = gradient;
       crc2.fill();
       crc2.restore();
+      background = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
     }
   
     function drawFirs(): void {

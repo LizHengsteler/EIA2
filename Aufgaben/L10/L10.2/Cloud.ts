@@ -6,8 +6,9 @@ namespace L10_2_GoldenerHerbst {
       size: number;
   
       constructor(_position: Vector, _velocity: Vector) {
-  
+        super();
         if (_position)
+        
         this.position = _position;
         else
         this.position = new Vector(300, 100);
@@ -22,19 +23,7 @@ namespace L10_2_GoldenerHerbst {
         //this.velocity = _velocity;
         //this.number = _number;
       }
-      move(): void {
-        this.position.add(this.velocity);
-  
-        if (this.position.x < 0)
-                this.position.x += crc2.canvas.width;
-        //if (this.position.y < 0)
-                //this.position.y += crc2.canvas.height;
-        if (this.position.x > crc2.canvas.width)
-                this.position.x -= crc2.canvas.width;
-        //if (this.position.y > crc2.canvas.height)
-          //      this.position.y -= crc2.canvas.height;
-    }
-  
+      
   
       draw(): void {
         let nParticles: number = 30;
