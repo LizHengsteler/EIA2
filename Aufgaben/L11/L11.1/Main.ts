@@ -31,7 +31,6 @@ namespace L11_1_GoldenerHerbst {
 }
 
   function handleLoad(_event: Event): void {
-    console.log("loaded");
     let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -46,7 +45,7 @@ namespace L11_1_GoldenerHerbst {
     createClouds();
     createLeaves();
     window.addEventListener("click", createNuts);
-    window.setInterval(update, 20);
+    window.setInterval(update, 50);
   }
 
   function drawBackground(): void {
@@ -188,7 +187,7 @@ namespace L11_1_GoldenerHerbst {
   }
 
   function createLeaves(): void {
-    for (let index = 0; index < 8; index++) {
+    for (let index: number = 0; index < 8; index++) {
       let leaf1: Leaf = new Leaf();
       moveables.push(leaf1);
       
@@ -205,8 +204,10 @@ namespace L11_1_GoldenerHerbst {
   }
 
   function createSquirrels(): void {
+    for (let index: number = 0; index < 4; index++) {
       let squirrel: Squirrel = new Squirrel ();
       moveables.push(squirrel);
+    }
   }
 
   function update(): void {
