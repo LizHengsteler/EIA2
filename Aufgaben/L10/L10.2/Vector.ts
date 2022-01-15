@@ -21,6 +21,7 @@ namespace L10_2_GoldenerHerbst {
             this.x += _addend.x;
             this.y += _addend.y;
         }
+        
 
         random(_minLength: number, _maxLength: number): void {
             let length: number = _minLength + Math.random() * (_maxLength - _minLength);

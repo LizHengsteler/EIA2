@@ -2,30 +2,19 @@
 var L11_1_GoldenerHerbst;
 (function (L11_1_GoldenerHerbst) {
     class Cloud extends L11_1_GoldenerHerbst.Moveable {
-        constructor(_position, _velocity) {
+        constructor() {
             super();
-            if (_position)
-                this.position = _position;
-            else
-                this.position = new L11_1_GoldenerHerbst.Vector(300, 100);
-            this.velocity = new L11_1_GoldenerHerbst.Vector(0, 0);
+            this.position = new L11_1_GoldenerHerbst.Vector(300, 100);
             this.velocity.random(100, 200);
-            //this.number = Math.floor(Math.random() * 4);
-            this.size = Math.random() * 3;
-            //this.position = _position;
-            //this.velocity = _velocity;
-            //this.number = _number;
         }
-        move() {
-            this.position.add(this.velocity);
+        move(_timeslice) {
+            let offset = this.velocity.copy();
+            offset.scale(_timeslice);
+            this.position.add(offset);
             if (this.position.x < 0)
                 this.position.x += L11_1_GoldenerHerbst.crc2.canvas.width;
-            //if (this.position.y < 0)
-            //this.position.y += crc2.canvas.height;
             if (this.position.x > L11_1_GoldenerHerbst.crc2.canvas.width)
                 this.position.x -= L11_1_GoldenerHerbst.crc2.canvas.width;
-            //if (this.position.y > crc2.canvas.height)
-            //      this.position.y -= crc2.canvas.height;
         }
         draw() {
             let nParticles = 30;
@@ -40,8 +29,8 @@ var L11_1_GoldenerHerbst;
             L11_1_GoldenerHerbst.crc2.fillStyle = gradient;
             for (let drawn = 0; drawn < nParticles; drawn++) {
                 L11_1_GoldenerHerbst.crc2.save();
-                let x = (Math.random() - 0.5) * this.size;
-                let y = -(Math.random() * this.size);
+                let x = (Math.random() - 0.5) * 200;
+                let y = -(Math.random() * 300);
                 L11_1_GoldenerHerbst.crc2.translate(x, y);
                 L11_1_GoldenerHerbst.crc2.fill(particle);
                 L11_1_GoldenerHerbst.crc2.restore();

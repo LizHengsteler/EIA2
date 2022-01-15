@@ -18,10 +18,10 @@ var L11_1_GoldenerHerbst;
             this.size = _size;
             //this.type = _type;
         }
-        move() {
+        move(_timeslice) {
             console.log("move");
             let offset = new L11_1_GoldenerHerbst.Vector(this.velocity.x, this.velocity.y);
-            //offset.scale(_timeslice);
+            offset.scale(_timeslice);
             this.position.add(offset);
             if (this.position.x < 0)
                 this.position.x += L11_1_GoldenerHerbst.crc2.canvas.width;

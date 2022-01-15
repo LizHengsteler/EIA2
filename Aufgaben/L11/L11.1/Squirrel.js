@@ -14,7 +14,7 @@ var L11_1_GoldenerHerbst;
                 this.velocity.randomX(-200, 200);
                 this.velocity.randomY(-200, 200);
             }
-            if (this.position.y <= gras) {
+            if (this.position.y <= L11_1_GoldenerHerbst.horizon) {
                 this.velocity.randomY(0, 200);
             }
             if (this.position.y > L11_1_GoldenerHerbst.crc2.canvas.height - 10) {

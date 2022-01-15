@@ -30,7 +30,7 @@ var L11_1_GoldenerHerbst;
                 this.position.y -= L11_1_GoldenerHerbst.crc2.canvas.height;
         }
         draw() {
-            // 
+            //
         }
     }
     L11_1_GoldenerHerbst.Moveable = Moveable;
