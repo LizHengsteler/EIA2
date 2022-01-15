@@ -87,6 +87,7 @@ var L10_2_GoldenerHerbst;
         L10_2_GoldenerHerbst.crc2.fillStyle = gradient;
         L10_2_GoldenerHerbst.crc2.fill();
         L10_2_GoldenerHerbst.crc2.restore();
+        L10_2_GoldenerHerbst.background = L10_2_GoldenerHerbst.crc2.getImageData(0, 0, L10_2_GoldenerHerbst.crc2.canvas.width, L10_2_GoldenerHerbst.crc2.canvas.height);
     }
     function drawFirs() {
         let nFirs = 6;

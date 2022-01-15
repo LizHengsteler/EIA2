@@ -3,6 +3,7 @@ var L10_2_GoldenerHerbst;
 (function (L10_2_GoldenerHerbst) {
     class Cloud extends L10_2_GoldenerHerbst.Moveable {
         constructor(_position, _velocity) {
+            super();
             if (_position)
                 this.position = _position;
             else
@@ -14,17 +15,6 @@ var L10_2_GoldenerHerbst;
             //this.position = _position;
             //this.velocity = _velocity;
             //this.number = _number;
-        }
-        move() {
-            this.position.add(this.velocity);
-            if (this.position.x < 0)
-                this.position.x += L10_2_GoldenerHerbst.crc2.canvas.width;
-            //if (this.position.y < 0)
-            //this.position.y += crc2.canvas.height;
-            if (this.position.x > L10_2_GoldenerHerbst.crc2.canvas.width)
-                this.position.x -= L10_2_GoldenerHerbst.crc2.canvas.width;
-            //if (this.position.y > crc2.canvas.height)
-            //      this.position.y -= crc2.canvas.height;
         }
         draw() {
             let nParticles = 30;
