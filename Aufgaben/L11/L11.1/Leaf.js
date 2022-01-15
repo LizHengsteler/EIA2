@@ -2,24 +2,12 @@
 var L11_1_GoldenerHerbst;
 (function (L11_1_GoldenerHerbst) {
     class Leaf extends L11_1_GoldenerHerbst.Moveable {
-        //type: number;
-        constructor(_position, _velocity, _size
-        //_type: number
-        ) {
+        constructor() {
             super();
-            if (_position)
-                this.position = _position;
-            else
-                this.position = new L11_1_GoldenerHerbst.Vector(0, 0);
-            this.velocity = new L11_1_GoldenerHerbst.Vector(0, 0);
+            this.position.randomY(0, L11_1_GoldenerHerbst.crc2.canvas.height);
             this.velocity.random(100, 200);
-            this.position = _position;
-            this.velocity = _velocity;
-            this.size = _size;
-            //this.type = _type;
         }
         move(_timeslice) {
-            console.log("move");
             let offset = new L11_1_GoldenerHerbst.Vector(this.velocity.x, this.velocity.y);
             offset.scale(_timeslice);
             this.position.add(offset);
@@ -33,10 +21,8 @@ var L11_1_GoldenerHerbst;
                 this.position.y -= L11_1_GoldenerHerbst.crc2.canvas.height;
         }
         draw() {
-            console.log("leaves");
             L11_1_GoldenerHerbst.crc2.save();
-            L11_1_GoldenerHerbst.crc2.translate(100, 500);
-            //crc2.scale(2, 2);
+            L11_1_GoldenerHerbst.crc2.translate(this.position.x, this.position.y);
             L11_1_GoldenerHerbst.crc2.beginPath();
             L11_1_GoldenerHerbst.crc2.rect(-1, -20, 2, 20);
             L11_1_GoldenerHerbst.crc2.closePath();

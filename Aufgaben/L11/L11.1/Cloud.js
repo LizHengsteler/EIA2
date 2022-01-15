@@ -4,8 +4,8 @@ var L11_1_GoldenerHerbst;
     class Cloud extends L11_1_GoldenerHerbst.Moveable {
         constructor() {
             super();
-            this.position = new L11_1_GoldenerHerbst.Vector(300, 100);
-            this.velocity.random(100, 200);
+            this.position = new L11_1_GoldenerHerbst.Vector(0, 100);
+            this.velocity.randomX(100, 200);
         }
         move(_timeslice) {
             let offset = this.velocity.copy();
@@ -18,7 +18,7 @@ var L11_1_GoldenerHerbst;
         }
         draw() {
             let nParticles = 30;
-            let radiusParticle = 40;
+            let radiusParticle = 60;
             let particle = new Path2D();
             let gradient = L11_1_GoldenerHerbst.crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParticle);
             particle.arc(0, 0, radiusParticle, 0, 2 * Math.PI);

@@ -29,9 +29,6 @@ var L11_1_GoldenerHerbst;
             if (this.position.y > L11_1_GoldenerHerbst.crc2.canvas.height)
                 this.position.y -= L11_1_GoldenerHerbst.crc2.canvas.height;
         }
-        draw() {
-            //
-        }
     }
     L11_1_GoldenerHerbst.Moveable = Moveable;
 })(L11_1_GoldenerHerbst || (L11_1_GoldenerHerbst = {}));

@@ -4,14 +4,19 @@ namespace L11_1_GoldenerHerbst {
 
     export class Squirrel extends Moveable {
 
+        private task: TASK;
+        
+
         constructor() {
             super();
 
             this.position = new Vector(350, 300);
             this.velocity.randomX(100, 200);
+            this.task = TASK.WAIT;
+            
         }
 
-        move(_timeslice: number): void {
+        public move(_timeslice: number): void {
             super.move(_timeslice);
             if (Math.random() < 0.01) {
                 this.velocity.randomX(-200, 200);
@@ -23,9 +28,11 @@ namespace L11_1_GoldenerHerbst {
             if (this.position.y > crc2.canvas.height - 10) {
                 this.velocity.randomY(-200, 0);
             }
+
+            
         }
 
-        draw(): void {
+        public draw(): void {
             crc2.save();
             crc2.translate(this.position.x, this.position.y);
             crc2.scale(0.3, 0.3);

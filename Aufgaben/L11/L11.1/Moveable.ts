@@ -1,8 +1,8 @@
 namespace L11_1_GoldenerHerbst {
   //Jirka Code Moveable https://github.com/JirkaDellOro/EIA2-Inverted/blob/master/X00_Code/L10_Inheritance/Asteroids/Moveable.ts
-  export class Moveable {
-    position: Vector;
-    velocity: Vector;
+  export abstract class Moveable {
+    protected position: Vector;
+    protected velocity: Vector;
 
     constructor(_position?: Vector, _velocity?: Vector) {
       if (_position) {
@@ -29,8 +29,6 @@ namespace L11_1_GoldenerHerbst {
         this.position.y -= crc2.canvas.height;
     }
 
-    draw(): void {
-      //
-    }
+    public abstract draw(): void;
   }
 }

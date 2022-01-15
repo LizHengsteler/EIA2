@@ -7,6 +7,7 @@ var L11_1_GoldenerHerbst;
             super();
             this.position = new L11_1_GoldenerHerbst.Vector(350, 300);
             this.velocity.randomX(100, 200);
+            this.task = L11_1_GoldenerHerbst.TASK.WAIT;
         }
         move(_timeslice) {
             super.move(_timeslice);

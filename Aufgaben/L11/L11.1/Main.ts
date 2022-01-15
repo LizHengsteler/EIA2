@@ -15,17 +15,20 @@ namespace L11_1_GoldenerHerbst {
   }
 
   window.addEventListener("load", handleLoad);
-
-  let leaves: Leaf[] = [];
-  let clouds: Cloud[] = [];
-  //let squirrels: Squirrel[] = [];
-
+  export let moveables: Moveable[] = [];
+  export let nuts: Nut [] = [];
+ 
   export let crc2: CanvasRenderingContext2D;
   export let golden: number = 0.62;
   export let horizon: number;
   export let x: number = 0;
   export let y: number = 0;
   let imageData: ImageData;
+
+  export enum TASK {
+    WAIT,
+    CATCH
+}
 
   function handleLoad(_event: Event): void {
     console.log("loaded");
@@ -38,16 +41,16 @@ namespace L11_1_GoldenerHerbst {
     horizon = crc2.canvas.height * golden;
 
     drawBackground();
-    //drawCloud({ x: 500, y: 125 }, { x: 250, y: 75 });
-
-    //drawSquirrels();
+    
+    createSquirrels();
     createClouds();
-    createLeaves(13);
+    createLeaves();
+    window.addEventListener("click", createNuts);
     window.setInterval(update, 20);
   }
 
   function drawBackground(): void {
-    //console.log("background");
+   
     let gradient: CanvasGradient = crc2.createLinearGradient(
       0,
       0,
@@ -146,7 +149,7 @@ namespace L11_1_GoldenerHerbst {
     }
   }
   function drawFir(): void {
-    //console.log("Fir");
+    
     crc2.save();
     crc2.translate(200, horizon);
     crc2.scale(1, 2);
@@ -181,33 +184,45 @@ namespace L11_1_GoldenerHerbst {
 
   function createClouds(): void {
     let cloud: Cloud = new Cloud();
-    clouds.push(cloud);
+    moveables.push(cloud);
   }
 
-  function createLeaves(_nLeaves: number): void {
-    for (let i: number = 0; i < _nLeaves; i++) {
-      let leaf1: Leaf = new Leaf(
-        new Vector(Math.random() * 200, Math.random() * 200),
-        new Vector(Math.random() * 200, Math.random() * 400),
-        2
-      );
-      leaves.push(leaf1);
+  function createLeaves(): void {
+    for (let index = 0; index < 8; index++) {
+      let leaf1: Leaf = new Leaf();
+      moveables.push(leaf1);
+      
     }
+      
+    
+  }
+
+  function createNuts(_event: MouseEvent): void {
+    let nut: Nut = new Nut;
+    nut.position = new Vector(_event.clientX, _event.clientY);
+    nuts.push(nut);
+
+  }
+
+  function createSquirrels(): void {
+      let squirrel: Squirrel = new Squirrel ();
+      moveables.push(squirrel);
   }
 
   function update(): void {
     crc2.putImageData(imageData, 0, 0);
-    for (let cloud of clouds) {
-      cloud.move(1 / 100);
-      cloud.draw();
-    }
-    for (let leaf1 of leaves) {
-      leaf1.draw();
-      leaf1.move(1 / 100);
-    }
-  }
 
-  /*function drawSquirrels(): void {
-      console.log("squirrel");
-    }*/
+    for (let moveable of moveables) {
+      moveable.move(1 / 100);
+      moveable.draw();
+    }
+
+    for (let nut of nuts) {
+      nut.draw();
+    }
+    
+  }
+  
+
+  
 }
