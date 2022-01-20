@@ -53,3 +53,4 @@ namespace L09_Asteroids {
             return (Math.abs(difference.x) < hitsize && Math.abs(difference.y) < hitsize);
         }
     }
+}
