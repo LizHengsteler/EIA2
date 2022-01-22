@@ -3,7 +3,7 @@ namespace L11_2_GoldenerHerbst {
     
       constructor() {
         super();
-        this.position.randomY(0, crc2.canvas.height);
+        this.position = Vector.randomY(0, crc2.canvas.height);
         this.velocity.random(100, 200);
   
       }

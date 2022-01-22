@@ -12,6 +12,18 @@ var L11_2_GoldenerHerbst;
             let value = Math.random() * (_max - _min) + _min;
             return value;
         }
+        static randomY(_min, _max) {
+            let vector = new Vector(0, 0);
+            let height = Math.random() * (_max - _min) + _min;
+            vector.sety(height);
+            return vector;
+        }
+        static randomX(_min, _max) {
+            let vector = new Vector(0, 0);
+            let length = Math.random() * (_max - _min) + _min;
+            vector.setx(length);
+            return vector;
+        }
         get length() {
             return Math.hypot(this.x, this.y);
         }
@@ -20,14 +32,6 @@ var L11_2_GoldenerHerbst;
             let direction = Math.random();
             this.set(Math.cos(direction), Math.sin(direction));
             this.scale(length);
-        }
-        randomY(_min, _max) {
-            let height = Math.random() * (_max - _min) + _min;
-            this.sety(height);
-        }
-        randomX(_min, _max) {
-            let lenght = Math.random() * (_max - _min) + _min;
-            this.setx(lenght);
         }
         set(_x, _y) {
             this.x = _x;

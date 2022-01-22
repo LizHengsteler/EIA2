@@ -5,7 +5,7 @@ var L11_2_GoldenerHerbst;
         constructor() {
             super();
             this.position = new L11_2_GoldenerHerbst.Vector(50, 100);
-            this.velocity.randomX(100, 200);
+            this.velocity = L11_2_GoldenerHerbst.Vector.randomX(100, 200);
         }
         move(_timeslice) {
             let offset = this.velocity.copy();
@@ -17,21 +17,6 @@ var L11_2_GoldenerHerbst;
                 this.position.x -= L11_2_GoldenerHerbst.crc2.canvas.width;
         }
         draw() {
-            /*let nParticles: number = 30;
-            let radiusParticle: number = 40;
-            let particle: Path2D = new Path2D();
-            let gradient: CanvasGradient = crc2.createRadialGradient(
-              0,
-              0,
-              0,
-              0,
-              0,
-              radiusParticle
-            );
-      
-            particle.arc(0, 0, radiusParticle, 0, 2 * Math.PI);
-            gradient.addColorStop(0, "hsl(195, 76%, 91%)");
-            gradient.addColorStop(1, "hsl(353, 76%, 91%)");*/
             let r1 = 20;
             let r2 = 50;
             let gradient = L11_2_GoldenerHerbst.crc2.createRadialGradient(0, 0, r1, 0, 0, r2);

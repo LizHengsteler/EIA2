@@ -17,15 +17,6 @@ var L11_2_GoldenerHerbst;
             else
                 this.velocity = new L11_2_GoldenerHerbst.Vector(0, 0);
         }
-        eat(_partner) {
-            let difference = L11_2_GoldenerHerbst.Vector.getDifference(this.position, _partner.position);
-            if (this.eatRadius + _partner.eatRadius < difference.length) {
-                return false;
-            }
-            else {
-                return true;
-            }
-        }
         move(_timeslice) {
             let offset = this.velocity.copy();
             offset.scale(_timeslice);

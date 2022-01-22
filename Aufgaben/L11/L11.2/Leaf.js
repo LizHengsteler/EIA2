@@ -4,7 +4,7 @@ var L11_2_GoldenerHerbst;
     class Leaf extends L11_2_GoldenerHerbst.Moveable {
         constructor() {
             super();
-            this.position.randomY(0, L11_2_GoldenerHerbst.crc2.canvas.height);
+            this.position = L11_2_GoldenerHerbst.Vector.randomY(0, L11_2_GoldenerHerbst.crc2.canvas.height);
             this.velocity.random(100, 200);
         }
         move(_timeslice) {

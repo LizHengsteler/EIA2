@@ -1,7 +1,7 @@
 namespace L11_2_GoldenerHerbst {
   //Jirka Code Moveable https://github.com/JirkaDellOro/EIA2-Inverted/blob/master/X00_Code/L10_Inheritance/Asteroids/Moveable.ts
   export abstract class Moveable {
-    protected position: Vector;
+    public position: Vector;
     protected velocity: Vector;
     public eatRadius: number = 0;
 
@@ -17,16 +17,7 @@ namespace L11_2_GoldenerHerbst {
       } else this.velocity = new Vector(0, 0);
     }
 
-    public eat(_partner: Moveable): boolean {
-      let difference: Vector = Vector.getDifference(this.position, _partner.position);
-      if (this.eatRadius + _partner.eatRadius < difference.length) {
-        return false;
-      }
-      else {
-        return true;
-      }
-
-    }
+   
 
     public move(_timeslice: number): void {
       let offset: Vector = this.velocity.copy();

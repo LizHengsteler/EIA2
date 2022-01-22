@@ -4,14 +4,14 @@ namespace L11_2_GoldenerHerbst {
 
     export class Squirrel extends Moveable {
 
-        //private task: TASK;
+        private task: TASK;
         
 
         constructor() {
             super();
 
             this.position = new Vector(Vector.random(crc2.canvas.width, 0), Vector.random(crc2.canvas.height, horizon));
-            this.velocity.randomX(100, 200);
+            this.velocity = Vector.randomX(100, 200);
             this.task = TASK.WAIT;
             
         }
@@ -19,18 +19,36 @@ namespace L11_2_GoldenerHerbst {
         public move(_timeslice: number): void {
             super.move(_timeslice);
             if (Math.random() < 0.01) {
-                this.velocity.randomX(-200, 200);
-                this.velocity.randomY(-200, 200);
+                this.velocity = Vector.randomX(-200, 200);
+                this.velocity = Vector.randomY(-200, 200);
             }
             if (this.position.y <= horizon) {
-                this.velocity.randomY(0, 200);
+                this.velocity = Vector.randomY(0, 200);
             }
             if (this.position.y > crc2.canvas.height - 10) {
-                this.velocity.randomY(-200, 0);
+                this.velocity = Vector.randomY(-200, 0);
+            }
+            if (nuts.length > 0) {
+                this.eat
             }
 
             
         }
+        public eat(): void {
+            for (let i = 0; i < nuts.length; i++) {
+              let difference: Vector = Vector.getDifference(this.position, nuts[i].position);
+              if (this.task == TASK.WAIT) {
+                  this.task = TASK.CATCH;
+                  this.velocity = new Vector(nuts[i].position.x - this.position.x , nuts[i].position.y - this.position.y);
+              }
+              if (this.task == TASK.CATCH) {
+                  if (difference )
+              }
+            }
+            
+            
+      
+          }
 
         public draw(): void {
             crc2.save();

@@ -3,24 +3,39 @@ var L11_2_GoldenerHerbst;
 (function (L11_2_GoldenerHerbst) {
     //Eichhörnchen von Lukas, in Absprache:)
     class Squirrel extends L11_2_GoldenerHerbst.Moveable {
-        //private task: TASK;
         constructor() {
             super();
             this.position = new L11_2_GoldenerHerbst.Vector(L11_2_GoldenerHerbst.Vector.random(L11_2_GoldenerHerbst.crc2.canvas.width, 0), L11_2_GoldenerHerbst.Vector.random(L11_2_GoldenerHerbst.crc2.canvas.height, L11_2_GoldenerHerbst.horizon));
-            this.velocity.randomX(100, 200);
+            this.velocity = L11_2_GoldenerHerbst.Vector.randomX(100, 200);
             this.task = L11_2_GoldenerHerbst.TASK.WAIT;
         }
         move(_timeslice) {
             super.move(_timeslice);
             if (Math.random() < 0.01) {
-                this.velocity.randomX(-200, 200);
-                this.velocity.randomY(-200, 200);
+                this.velocity = L11_2_GoldenerHerbst.Vector.randomX(-200, 200);
+                this.velocity = L11_2_GoldenerHerbst.Vector.randomY(-200, 200);
             }
             if (this.position.y <= L11_2_GoldenerHerbst.horizon) {
-                this.velocity.randomY(0, 200);
+                this.velocity = L11_2_GoldenerHerbst.Vector.randomY(0, 200);
             }
             if (this.position.y > L11_2_GoldenerHerbst.crc2.canvas.height - 10) {
-                this.velocity.randomY(-200, 0);
+                this.velocity = L11_2_GoldenerHerbst.Vector.randomY(-200, 0);
+            }
+            if (L11_2_GoldenerHerbst.nuts.length > 0) {
+                this.eat;
+            }
+        }
+        eat() {
+            for (let i = 0; i < L11_2_GoldenerHerbst.nuts.length; i++) {
+                let difference = L11_2_GoldenerHerbst.Vector.getDifference(this.position, L11_2_GoldenerHerbst.nuts[i].position);
+                if (this.task == L11_2_GoldenerHerbst.TASK.WAIT) {
+                    this.task = L11_2_GoldenerHerbst.TASK.CATCH;
+                    this.velocity = new L11_2_GoldenerHerbst.Vector(L11_2_GoldenerHerbst.nuts[i].position.x - this.position.x, L11_2_GoldenerHerbst.nuts[i].position.y - this.position.y);
+                }
+                if (this.task == L11_2_GoldenerHerbst.TASK.CATCH) {
+                    if (difference)
+                        ;
+                }
             }
         }
         draw() {

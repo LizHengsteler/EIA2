@@ -4,17 +4,9 @@ var L11_2_GoldenerHerbst;
     /*Aufgabe: L11.2 Goldener Herbst
       Name: Liz Hengsteler
       Matrikel: 268386
-      Datum: 15.01.2022
+      Datum: 22.01.2022
       Zusammenarbeit: Hannah Sättele und Lukas Dirlmeier
       Quellen: Inverted Classroom, Jirka Videos + Code
-
-       Dort ist auch noch zu ergänzen, welche Werte der Typ TASK annehmen kann; passende Methoden,
-        die ihn berücksichtigen wären auch gut. Wenn die Superklasse
-        schon die gute Möglichkeit bietet, die Position beim constructor als Parameter anzugeben, könnten die Subklassen
-        das ebenfalls machen – davon ist auch in den ADs nichts zu finden. Die Wolke bei der Umsetzung scheint recht unnatürlich, sie sollte ihre Partikel
-        lernen sich an die Position ihrer Partikel zu erinnern. Die Eichhörnchen
-        haben wohl leider keinen Hunger
-    
       */
     window.addEventListener("load", handleLoad);
     L11_2_GoldenerHerbst.moveables = [];
@@ -40,6 +32,7 @@ var L11_2_GoldenerHerbst;
         createSquirrels();
         createClouds();
         createLeaves();
+        canvas.addEventListener("click", createRain);
         canvas.addEventListener("click", createNuts);
         //Cloud.addEventListener("mousedown", moveCloud);
         window.setInterval(update, 50);
@@ -158,6 +151,15 @@ var L11_2_GoldenerHerbst;
         for (let index = 0; index < 4; index++) {
             let squirrel = new L11_2_GoldenerHerbst.Squirrel();
             L11_2_GoldenerHerbst.moveables.push(squirrel);
+        }
+    }
+    function createRain(_event) {
+        if (_event.clientY <= L11_2_GoldenerHerbst.horizon) {
+            let rainDrop1 = new L11_2_GoldenerHerbst.Raindrop(new L11_2_GoldenerHerbst.Vector(L11_2_GoldenerHerbst.Vector.random(200, 300), 300));
+            let rainDrop2 = new L11_2_GoldenerHerbst.Raindrop(new L11_2_GoldenerHerbst.Vector(L11_2_GoldenerHerbst.Vector.random(800, 900), 300));
+            L11_2_GoldenerHerbst.moveables.push(rainDrop1, rainDrop2);
+            rainDrop1.rainFall = false;
+            rainDrop2.rainFall = false;
         }
     }
     /*function moveCloud() {

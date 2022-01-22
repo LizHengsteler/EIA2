@@ -15,8 +15,23 @@ namespace L11_2_GoldenerHerbst {
         public static random(_min: number, _max: number): number {
             let value: number = Math. random() * (_max - _min) + _min;
             return value;
+        
         }
 
+        public static randomY(_min: number, _max: number): Vector {
+            let vector: Vector = new Vector (0, 0);
+            let height: number = Math.random() * (_max - _min) + _min;
+            vector.sety(height);
+            return vector;
+        }
+
+        public static randomX(_min: number, _max: number): Vector {
+            let vector: Vector = new Vector (0, 0);
+            let length: number = Math.random() * (_max - _min) + _min;
+            vector.setx(length);
+            return vector;
+        }
+        
         public get length(): number {
             return Math.hypot(this.x, this.y);
         }
@@ -30,15 +45,7 @@ namespace L11_2_GoldenerHerbst {
             this.scale(length);
         }
 
-        public randomY(_min: number, _max: number): void {
-            let height: number = Math.random() * (_max - _min) + _min;
-            this.sety(height);
-        }
-
-        public randomX(_min: number, _max: number): void {
-            let lenght: number = Math.random() * (_max - _min) + _min;
-            this.setx(lenght);
-        }
+       
 
         public set(_x: number, _y: number): void {
             this.x = _x;
